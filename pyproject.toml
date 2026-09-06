@@ -7,7 +7,7 @@ name = "superpolyrio-paper-trading"
 version = "0.1.0"
 description = "Polymarket paper execution, accounting, risk, and fidelity services"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
     "aiohttp>=3.9",
     "aiohttp-socks>=0.8",
@@ -48,6 +48,7 @@ paper-health = "quant.paper.production_runtime:main"
 paper-account-truth = "quant.simulator.account_truth.cli:main"
 paper-rewards = "quant.simulator.rewards.official_sync_cli:main"
 paper-operations = "quant.simulator.operations.operations_cli:main"
+paper-paired-probe = "scripts.run_paper_paired_probe:main"
 paper-resolution = "quant.settlement.resolution_cli:main"
 paper-bridge = "quant.simulator.economics.bridge_cli:main"
 paper-clean-v2 = "quant.calibration.clean_v2_cohort_cli:main"
@@ -58,7 +59,7 @@ include = ["quant*", "scripts*"]
 exclude = ["tests*"]
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py310"
 line-length = 88
 
 [tool.ruff.lint.isort]

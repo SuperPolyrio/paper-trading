@@ -19,6 +19,7 @@ gates. A passing unit or replay test does not promote a live execution model.
 | Official account truth | `quant/simulator/account_truth/` | `test_account_truth.py`, `test_execution_closure.py`, `test_chain_activity_mirror.py` | Included and passing |
 | Combo/RFQ, bridge, dispute, and integrity | `quant/simulator/combo/`, `quant/simulator/economics/`, `quant/settlement/`, `quant/simulator/integrity/` | `test_official_combo_contracts.py`, `test_bridge_official_client.py`, `test_dispute_policy.py`, `test_surveillance.py` | Included and passing |
 | Offline/live calibration and evidence gates | `quant/calibration/`, `quant/maker/` | `tests/calibration/`, `tests/maker/`, maker tests under `tests/execution/` | Included and passing |
+| Paired paper/live evidence recovery | `quant/paper/paired_probe.py`, `scripts/run_paper_paired_probe.py` | `test_paper_paired_probe.py`, `test_paired_probe_bridge.py` | Included and passing |
 | Production health, backup, soak, and observability | `quant/paper/production_runtime.py`, `quant/paper/operations.py`, `deploy/` | `test_paper_production_runtime.py`, `test_paper_operations.py`, `tests/validation/` | Included and passing |
 | LOB input boundary | `quant/orderbook/local_event_bus.py`, `local_book.py`, `service.py`, replay readers | feed consumer, replay, and maker fidelity tests | Consumer only; collector ownership excluded |
 

@@ -1,0 +1,16 @@
+[Unit]
+Description=Polymarket paper DB control-plane SSH forward
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/prediction-market-quant/paper-db-control.env
+ExecStart=%h/develop/polymarket/repos/paper-trading/scripts/run_paper_db_control_tunnel.sh
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

@@ -66,5 +66,6 @@ invoked by the paper worker.
 - `webpage`: retail and professional paper-trading clients.
 - `docs`: product ideas, official-contract references, and runbooks.
 
-See `docs/MIGRATION_AUDIT.md` for the extraction boundary and verification, and
-`docs/FEATURE_OWNERSHIP_MATRIX.md` for the code-to-test ownership map.
+See `docs/MIGRATION_AUDIT.md` for the extraction boundary and verification,
+`docs/FEATURE_OWNERSHIP_MATRIX.md` for the code-to-test ownership map, and
+`docs/SOURCE_CUTOVER_PLAN.md` before removing code from the source repository.

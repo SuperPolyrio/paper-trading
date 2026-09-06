@@ -6,10 +6,13 @@
 - Target: `SuperPolyrio/paper-trading`
 - Source behavior baseline: 893 relevant tests passed with importlib mode.
 - Source `quant` size observed during extraction: 472,144 Python lines.
-- Final target `quant` size: 143,251 Python lines across 341 files.
-- Extracted target regression suite: 800 tests passed.
-- Installed command smoke test: all 10 supported CLI entry points passed.
-- Import closure: 363 `quant` and `scripts` modules loaded with zero failures.
+- Final target `quant` size: 143,494 Python lines across 342 files.
+- Extracted target regression suite: 820 tests passed under the dedicated
+  `prediction-market-quant` conda environment (Python 3.12).
+- Compatibility check: the production-runtime tests also pass under the host
+  Python 3.10 interpreter.
+- Installed command smoke test: all 11 supported CLI entry points passed.
+- Import closure: 367 `quant` and `scripts` modules loaded with zero failures.
 - HTTP smoke test: health and OpenAPI endpoints returned 200 after a test-only
   Paper API pepper was supplied; startup without it remained fail-closed.
 - Secret scan: no credential files, private-key material, or authenticated URLs
@@ -26,6 +29,7 @@ execution behavior while ownership moves between repositories.
 - Taker/maker execution and deterministic event ordering.
 - Risk, OMS, admission, finality, settlement, rewards, and account truth.
 - Offline/live fidelity tools needed to validate execution accuracy.
+- Paired paper/live probe, reconciler, and DB control tunnel operations.
 - A minimal BookState/event-socket and archive-reader dependency boundary.
 - Supported deployment units, dashboards, SDKs, UI, and canonical runbooks.
 - The three checksum-pinned official documentation snapshots referenced by the
@@ -58,3 +62,5 @@ service files still reference the old checkout. Removal is allowed only after:
 
 This prevents a repository cleanup from becoming an accidental production
 outage or irreversible loss of untracked work.
+
+The exact service-by-service procedure is in `SOURCE_CUTOVER_PLAN.md`.

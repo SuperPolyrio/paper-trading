@@ -1,0 +1,12 @@
+[Unit]
+Description=Retry paper/live paired-probe reconciliation
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+RandomizedDelaySec=15
+Persistent=true
+Unit=poly-quant-paper-paired-reconciler.service
+
+[Install]
+WantedBy=timers.target

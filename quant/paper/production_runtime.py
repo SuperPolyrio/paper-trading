@@ -12,7 +12,7 @@ import subprocess
 import sys
 import time
 from collections.abc import Mapping, Sequence
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -75,6 +75,7 @@ MANIFEST_FILES = (
     "quant/paper/live_shadow_service.py",
     "quant/paper/operations.py",
     "quant/paper/paper_ledger.py",
+    "quant/paper/paired_probe.py",
     "quant/paper/persistent_event_kernel.py",
     "quant/paper/professional_execution.py",
     "quant/paper/production_runtime.py",
@@ -89,6 +90,8 @@ MANIFEST_FILES = (
     "quant/calibration/reconcile.py",
     "quant/calibration/signed_order_prediction.py",
     "quant/calibration/store.py",
+    "quant/backtest/order_state.py",
+    "quant/backtest/shadow_live_validation.py",
     "quant/core/db.py",
     "quant/maker/own_order_truth.py",
     "quant/execution/models/maker_model_domain.py",
@@ -118,6 +121,7 @@ MANIFEST_FILES = (
     "scripts/run_calibration_portfolio_monitor_secure.sh",
     "scripts/run_calibration_settlement_watcher_secure.sh",
     "scripts/run_paper_health_secure.sh",
+    "scripts/run_paper_db_control_tunnel.sh",
     "scripts/run_paper_execution_catalog_sync.sh",
     "scripts/run_paper_security_acceptance.py",
     "scripts/run_unified_admission_acceptance.py",
@@ -125,6 +129,8 @@ MANIFEST_FILES = (
     "scripts/run_paper_tenant_rls_probe.py",
     "scripts/run_paper_tenant_postgres_acceptance.py",
     "scripts/manage_paper_tenants.py",
+    "scripts/run_paper_paired_probe.py",
+    "scripts/run_paper_paired_reconciler.sh",
     "scripts/paper_api_server.py",
     "scripts/api/routes/paper_v1.py",
     "scripts/run_paper_api_secure.sh",
@@ -149,6 +155,9 @@ MANIFEST_FILES = (
     "deploy/systemd/poly-quant-calibration-portfolio-monitor.service",
     "deploy/systemd/poly-quant-calibration-settlement-watcher.service",
     "deploy/systemd/poly-quant-paper-daily-accounting.service",
+    "deploy/systemd/poly-quant-paper-db-control-tunnel.service",
+    "deploy/systemd/poly-quant-paper-paired-reconciler.service",
+    "deploy/systemd/poly-quant-paper-paired-reconciler.timer",
     "deploy/systemd/poly-quant-gcp-paper-live-shadow.service",
     "deploy/systemd/poly-quant-paper-execution-catalog-sync.service",
     "deploy/systemd/poly-quant-paper-execution-catalog-sync.timer",
@@ -277,7 +286,7 @@ REQUIRED_COLUMNS = {
 
 
 def _now() -> datetime:
-    return datetime.now(UTC)
+    return datetime.now(timezone.utc)
 
 
 def _write_json(path: Path, payload: Mapping[str, Any]) -> None:
@@ -657,9 +666,9 @@ def _parse_time(value: Any) -> datetime | None:
     except ValueError:
         return None
     return (
-        parsed.astimezone(UTC)
+        parsed.astimezone(timezone.utc)
         if parsed.tzinfo
-        else parsed.replace(tzinfo=UTC)
+        else parsed.replace(tzinfo=timezone.utc)
     )
 
 

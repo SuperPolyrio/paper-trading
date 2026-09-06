@@ -1,0 +1,12 @@
+[Unit]
+Description=Synchronize live calibration with paper paired-probe evidence
+Wants=network-online.target poly-quant-paper-db-control-tunnel.service
+After=network-online.target poly-quant-paper-db-control-tunnel.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/develop/polymarket/repos/paper-trading
+ExecStart=/usr/bin/bash scripts/run_paper_paired_reconciler.sh
+Nice=10
+IOSchedulingClass=idle
+TimeoutStartSec=120
