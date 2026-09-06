@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tenant-scoped Polymarket paper account manager and execution audit workspace.">
+    <title>polyData Paper Accounts</title>
+    <link rel="stylesheet" href="./paper-account.css">
+  </head>
+  <body>
+    <noscript><main class="noscript">JavaScript is required to use the paper account workspace.</main></noscript>
+    <div id="paperApp" class="paper-shell" data-api-base="/v1/paper">
+      <aside class="paper-sidebar" aria-label="Paper account navigation">
+        <a class="paper-brand" href="/paper.html" aria-label="polyData Paper home">
+          <span class="paper-brand-mark"><img src="./assets/icons/nav-strategies.svg" alt=""></span>
+          <span><strong>polyData</strong><small>Paper Accounts</small></span>
+        </a>
+        <nav class="paper-nav">
+          <button class="active" type="button" data-view="overview"><img src="./assets/icons/nav-dashboard.svg" alt="">Overview</button>
+          <button type="button" data-view="orders"><img src="./assets/icons/nav-backtests.svg" alt="">Orders</button>
+          <button type="button" data-view="positions"><img src="./assets/icons/nav-markets.svg" alt="">Positions</button>
+          <button type="button" data-view="fills"><img src="./assets/icons/nav-outcomes.svg" alt="">Fills</button>
+          <button type="button" data-view="ledger"><img src="./assets/icons/nav-reports.svg" alt="">Ledger</button>
+          <button type="button" data-view="journal"><img src="./assets/icons/nav-data-quality.svg" alt="">Journal</button>
+          <button type="button" data-view="performance"><img src="./assets/icons/nav-strategies.svg" alt="">NAV &amp; TCA</button>
+          <button type="button" data-view="replays"><img src="./assets/icons/nav-backtests.svg" alt="">Replay</button>
+          <button type="button" data-view="research"><img src="./assets/icons/nav-data-quality.svg" alt="">Research</button>
+          <button type="button" data-view="admin"><img src="./assets/icons/nav-settings.svg" alt="">Admin</button>
+        </nav>
+        <div class="paper-sidebar-foot">
+          <a href="/paper-retail.html"><img src="./assets/icons/nav-markets.svg" alt="">Retail Paper Trading</a>
+          <button id="modelDisclosureButton" type="button"><img src="./assets/icons/nav-data-quality.svg" alt=""><span><strong>Model limits</strong><small>Paper fidelity disclosure</small></span></button>
+          <button id="connectionButton" type="button"><span class="connection-dot"></span><span><strong>Paper API</strong><small id="connectionLabel">Not connected</small></span></button>
+        </div>
+      </aside>
+
+      <main class="paper-main">
+        <header class="paper-topbar">
+          <div>
+            <span class="section-kicker">Account Manager</span>
+            <h1 id="pageTitle">Portfolio overview</h1>
+          </div>
+          <div class="topbar-actions">
+            <label class="account-picker"><span>Account</span><select id="accountSelect" aria-label="Paper account"></select></label>
+            <button id="refreshButton" type="button">Refresh</button>
+            <button id="forkButton" type="button">Fork</button>
+            <button id="createAccountButton" class="primary-action" type="button">New account</button>
+          </div>
+        </header>
+
+        <section class="account-context" aria-live="polite">
+          <div><span id="accountStatus" class="status-pill neutral">Unavailable</span><strong id="accountName">Connect the Paper API</strong><small id="accountMeta">No account selected</small></div>
+          <div class="export-controls">
+            <label><span>Export</span><select id="exportResource"><option value="orders">Orders</option><option value="positions">Positions</option><option value="fills">Fills</option><option value="ledger">Ledger</option><option value="journal">Journal</option><option value="nav">NAV history</option><option value="tca">TCA</option></select></label>
+            <label><span>Format</span><select id="exportFormat"><option value="csv">CSV</option><option value="jsonl">JSONL</option><option value="parquet">Parquet</option></select></label>
+            <button id="exportButton" type="button"><img src="./assets/icons/top-download.svg" alt="">Download</button>
+          </div>
+        </section>
+
+        <section id="emptyState" class="paper-empty" hidden>
+          <strong>No paper accounts found</strong>
+          <p>Create an account to start an isolated paper ledger.</p>
+          <button type="button" data-create-account class="primary-action">New account</button>
+        </section>
+
+        <div id="workspaceContent" hidden>
+          <section id="overviewView" class="paper-view" data-view-panel="overview">
+            <div id="metricBand" class="metric-band" aria-label="Account metrics"></div>
+            <div class="overview-grid">
+              <section class="workspace-panel nav-panel">
+                <header><div><span>NAV history</span><strong>Confirmed and executable views</strong></div><span id="navQualityLabel" class="quality-label">Unavailable</span></header>
+                <div class="nav-chart-wrap"><canvas id="navChart" role="img" aria-label="Paper account NAV history"></canvas><div id="navChartEmpty" class="chart-empty">No NAV history</div></div>
+                <div id="navLegend" class="nav-legend"></div>
+              </section>
+              <section class="workspace-panel health-panel">
+                <header><div><span>Execution health</span><strong>Current account evidence</strong></div></header>
+                <dl id="qualitySummary" class="quality-summary"></dl>
+              </section>
+            </div>
+            <section class="workspace-panel table-panel">
+              <header><div><span>Open positions</span><strong>Marked inventory</strong></div><button type="button" data-open-view="positions">View all</button></header>
+              <div id="overviewPositions" class="paper-table-wrap"></div>
+            </section>
+            <section class="workspace-panel table-panel">
+              <header><div><span>Recent orders</span><strong>Execution and finality state</strong></div><button type="button" data-open-view="orders">View all</button></header>
+              <div id="overviewOrders" class="paper-table-wrap"></div>
+            </section>
+          </section>
+
+          <section id="resourceView" class="paper-view" data-view-panel="resource" hidden>
+            <div class="resource-toolbar">
+              <div><strong id="resourceTitle">Orders</strong><span id="resourceCount">0 rows</span></div>
+              <label><span>Filter</span><input id="resourceFilter" type="search" placeholder="Filter current rows" autocomplete="off"></label>
+            </div>
+            <section class="workspace-panel table-panel resource-panel"><div id="resourceTable" class="paper-table-wrap"></div></section>
+          </section>
+
+          <section id="performanceView" class="paper-view" data-view-panel="performance" hidden>
+            <section class="workspace-panel nav-panel full-width">
+              <header><div><span>NAV history</span><strong>Current and historical valuation evidence</strong></div><span id="performanceQualityLabel" class="quality-label">Unavailable</span></header>
+              <div class="nav-chart-wrap large"><canvas id="performanceChart" role="img" aria-label="Historical paper account NAV"></canvas><div id="performanceChartEmpty" class="chart-empty">No NAV history</div></div>
+            </section>
+            <section class="workspace-panel table-panel">
+              <header><div><span>NAV snapshots</span><strong>Audit history</strong></div></header>
+              <div id="navHistoryTable" class="paper-table-wrap"></div>
+            </section>
+            <section class="workspace-panel table-panel">
+              <header><div><span>Transaction cost analysis</span><strong>Per-order execution evidence</strong></div></header>
+              <div id="tcaTable" class="paper-table-wrap"></div>
+            </section>
+          </section>
+
+          <section id="replayView" class="paper-view" data-view-panel="replays" hidden>
+            <div class="resource-toolbar">
+              <div><strong>Replay sessions</strong><span id="replayCount">0 sessions</span></div>
+              <button id="createReplayButton" class="primary-action" type="button">New replay</button>
+            </div>
+            <section class="workspace-panel table-panel replay-list-panel">
+              <div id="replayTable" class="paper-table-wrap"></div>
+            </section>
+            <section id="replayDetail" class="replay-detail" hidden>
+              <div class="replay-detail-head">
+                <div><span>Recorded lifecycle replay</span><strong id="replayDetailTitle">Replay</strong><small id="replayDetailMeta">Frozen input</small></div>
+                <div class="replay-actions"><button id="pauseReplayButton" type="button">Pause</button><button id="resumeReplayButton" class="primary-action" type="button">Resume</button><button id="forkReplayButton" type="button">Fork</button></div>
+              </div>
+              <div id="replayMetricBand" class="metric-band replay-metrics"></div>
+              <div class="replay-report-grid">
+                <section class="workspace-panel"><header><div><span>Performance</span><strong>Frozen NAV and fills</strong></div></header><dl id="replayPerformance" class="quality-summary compact"></dl></section>
+                <section class="workspace-panel"><header><div><span>Risk</span><strong>Exposure and drawdown</strong></div></header><dl id="replayRisk" class="quality-summary compact"></dl></section>
+                <section class="workspace-panel"><header><div><span>Benchmark</span><strong>Relative outcome</strong></div></header><dl id="replayBenchmark" class="quality-summary compact"></dl></section>
+                <section class="workspace-panel"><header><div><span>Evidence</span><strong>Report confidence</strong></div></header><dl id="replayDataQuality" class="quality-summary compact"></dl></section>
+              </div>
+              <section class="workspace-panel table-panel">
+                <header><div><span>Attribution</span><strong>Realized PnL ledger evidence</strong></div><span id="replayAttributionBasis" class="quality-label">Ledger events</span></header>
+                <div id="replayAttributionTable" class="paper-table-wrap"></div>
+              </section>
+              <section class="workspace-panel table-panel">
+                <header><div><span>Frozen events</span><strong>Deterministic scheduler order</strong></div><span id="replayLimitations" class="quality-label">Recorded lifecycle</span></header>
+                <div id="replayEventsTable" class="paper-table-wrap"></div>
+              </section>
+            </section>
+          </section>
+
+          <section id="researchView" class="paper-view" data-view-panel="research" hidden>
+            <div class="resource-toolbar">
+              <div><strong>Scenario and synthetic orders</strong><span id="researchCount">0 persisted records</span></div>
+              <div class="replay-actions"><button id="createConditionalButton" type="button">New conditional</button><button id="createScenarioButton" class="primary-action" type="button">New scenario</button></div>
+            </div>
+            <div class="admin-grid research-grid">
+              <section class="workspace-panel table-panel admin-panel">
+                <header><div><span>Scenario runs</span><strong>Isolated research PnL</strong></div><span class="quality-label">SCENARIO</span></header>
+                <div id="scenarioTable" class="paper-table-wrap"></div>
+              </section>
+              <section class="workspace-panel table-panel admin-panel">
+                <header><div><span>Conditional orders</span><strong>Synthetic trigger lifecycle</strong></div></header>
+                <div id="conditionalOrderTable" class="paper-table-wrap"></div>
+              </section>
+            </div>
+          </section>
+
+          <section id="adminView" class="paper-view" data-view-panel="admin" hidden>
+            <div class="resource-toolbar admin-toolbar">
+              <div><strong>Operations control plane</strong><span id="adminUpdatedAt">Not loaded</span></div>
+              <button id="refreshAdminButton" type="button">Refresh</button>
+            </div>
+            <section class="admin-control-band" aria-label="Paper execution controls">
+              <div><span>Tenant</span><strong id="adminTenantStatus">Unavailable</strong><small id="adminTenantName">Tenant scope</small></div>
+              <div class="admin-action-group"><button id="freezeTenantButton" class="danger-action" type="button">Freeze tenant</button><button id="unfreezeTenantButton" type="button">Unfreeze tenant</button></div>
+              <div><span>Selected account</span><strong id="adminAccountStatus">Unavailable</strong><small id="adminAccountName">No account</small></div>
+              <div class="admin-action-group"><button id="freezeAccountButton" type="button">Freeze</button><button id="unfreezeAccountButton" type="button">Unfreeze</button><button id="reconcileAccountButton" type="button">Reconcile</button><button id="killAccountButton" class="danger-action" type="button">Kill</button></div>
+            </section>
+            <div class="admin-grid">
+              <section class="workspace-panel table-panel admin-panel">
+                <header><div><span>Dead letter queue</span><strong>Failed event recovery</strong></div></header>
+                <div id="adminDlqTable" class="paper-table-wrap"></div>
+              </section>
+              <section class="workspace-panel table-panel admin-panel">
+                <header><div><span>Admin jobs</span><strong>Reconciliation and retention</strong></div></header>
+                <div id="adminJobsTable" class="paper-table-wrap"></div>
+              </section>
+              <section class="workspace-panel table-panel admin-panel">
+                <header><div><span>Incidents</span><strong>Response timeline</strong></div><button id="createIncidentButton" type="button">New incident</button></header>
+                <div id="adminIncidentsTable" class="paper-table-wrap"></div>
+              </section>
+              <section class="workspace-panel table-panel admin-panel">
+                <header><div><span>Maintenance</span><strong>Tenant notices</strong></div><button id="createNoticeButton" type="button">New notice</button></header>
+                <div id="adminNoticesTable" class="paper-table-wrap"></div>
+              </section>
+            </div>
+            <section class="workspace-panel table-panel admin-panel retention-panel">
+              <header><div><span>Retention</span><strong>Policy windows and legal holds</strong></div></header>
+              <div id="adminRetentionTable" class="paper-table-wrap"></div>
+            </section>
+            <section class="workspace-panel table-panel admin-panel">
+              <header><div><span>Evidence bundles</span><strong>Signed portable support exports</strong></div><button id="createBundleButton" class="primary-action" type="button">Create bundle</button></header>
+              <div id="adminBundlesTable" class="paper-table-wrap"></div>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div id="toast" class="paper-toast" role="status" aria-live="polite" hidden></div>
+
+    <dialog id="connectionDialog" class="paper-dialog">
+      <form id="connectionForm" method="dialog">
+        <header><div><span>Paper-only session</span><h2>Connect API</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <label><span>API base URL</span><input id="apiBaseInput" type="text" inputmode="url" required spellcheck="false"></label>
+        <label><span>Paper API key</span><input id="apiKeyInput" type="password" required autocomplete="off" spellcheck="false"></label>
+        <footer><button id="disconnectButton" type="button">Disconnect</button><button class="primary-action" type="submit">Connect</button></footer>
+      </form>
+    </dialog>
+
+    <dialog id="accountDialog" class="paper-dialog">
+      <form id="accountForm" method="dialog">
+        <header><div><span id="accountDialogKicker">Paper account</span><h2 id="accountDialogTitle">New account</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <input id="accountMode" type="hidden" value="create">
+        <label><span>Account name</span><input id="accountNameInput" type="text" maxlength="120" required></label>
+        <label id="initialCashField"><span>Initial cash (USDC)</span><input id="initialCashInput" type="number" min="1" step="0.01" value="10000" required></label>
+        <footer><button type="button" data-close-dialog>Cancel</button><button class="primary-action" type="submit">Confirm</button></footer>
+      </form>
+    </dialog>
+
+    <dialog id="orderAuditDialog" class="paper-dialog audit-dialog">
+      <div class="audit-dialog-content">
+        <header><div><span>Order audit</span><h2 id="auditTitle">Order</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <div id="auditSummary" class="audit-summary"></div>
+        <div id="auditQuality" class="quality-chip-row"></div>
+        <section><h3>Lifecycle timeline</h3><ol id="auditTimeline" class="audit-timeline"></ol></section>
+        <section><h3>Execution evidence</h3><dl id="auditEvidence" class="audit-evidence"></dl></section>
+        <footer><button id="cancelPaperOrder" type="button" hidden>Cancel order</button><button type="button" data-close-dialog>Close</button></footer>
+      </div>
+    </dialog>
+
+    <dialog id="replayDialog" class="paper-dialog">
+      <form id="replayForm" method="dialog">
+        <header><div><span>Historical replay</span><h2 id="replayDialogTitle">New replay</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <input id="replayMode" type="hidden" value="create">
+        <label><span>Name</span><input id="replayNameInput" type="text" maxlength="120" required></label>
+        <div id="replaySourceFields" class="dialog-field-grid">
+          <label><span>Start</span><input id="replayStartInput" type="datetime-local" step="1" required></label>
+          <label><span>End</span><input id="replayEndInput" type="datetime-local" step="1" required></label>
+          <label><span>Speed</span><input id="replaySpeedInput" type="number" min="0.01" max="1000" step="0.01" value="1" required></label>
+          <label><span>Seed</span><input id="replaySeedInput" type="number" min="0" step="1" value="0" required></label>
+          <label><span>Strategy version</span><input id="replayStrategyVersionInput" type="text" value="paper-current" required></label>
+          <label><span>Execution model</span><input id="replayExecutionModelInput" type="text" value="recorded-paper-lifecycle-v1" required></label>
+        </div>
+        <label><span>Benchmark</span><select id="replayBenchmarkInput"><option value="CASH">Cash</option><option value="CONSERVATIVE_NAV">Conservative NAV</option></select></label>
+        <footer><button type="button" data-close-dialog>Cancel</button><button class="primary-action" type="submit">Confirm</button></footer>
+      </form>
+    </dialog>
+
+    <dialog id="supportDialog" class="paper-dialog">
+      <form id="supportForm" method="dialog">
+        <header><div><span>Support record</span><h2 id="supportDialogTitle">New incident</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <input id="supportMode" type="hidden" value="incident">
+        <label><span>Title</span><input id="supportTitleInput" type="text" maxlength="160" required></label>
+        <label><span id="supportBodyLabel">Summary</span><textarea id="supportBodyInput" rows="4" maxlength="4000" required></textarea></label>
+        <label id="supportSeverityField"><span>Severity</span><select id="supportSeverityInput"><option value="SEV4">SEV4</option><option value="SEV3">SEV3</option><option value="SEV2">SEV2</option><option value="SEV1">SEV1</option></select></label>
+        <div class="dialog-field-grid"><label><span>Starts</span><input id="supportStartsInput" type="datetime-local" step="1" required></label><label id="supportEndsField"><span>Ends</span><input id="supportEndsInput" type="datetime-local" step="1"></label></div>
+        <footer><button type="button" data-close-dialog>Cancel</button><button class="primary-action" type="submit">Create</button></footer>
+      </form>
+    </dialog>
+
+    <dialog id="scenarioDialog" class="paper-dialog">
+      <form id="scenarioForm" method="dialog">
+        <header><div><span>Non-execution research</span><h2>New scenario</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <label><span>Name</span><input id="scenarioNameInput" type="text" maxlength="120" required></label>
+        <label><span>Resolution payouts (JSON)</span><textarea id="scenarioPayoutInput" rows="3" spellcheck="false">{}</textarea></label>
+        <label><span>Price shocks (JSON)</span><textarea id="scenarioShockInput" rows="3" spellcheck="false">{}</textarea></label>
+        <div class="dialog-field-grid">
+          <label><span>Depth haircut</span><input id="scenarioHaircutInput" type="number" min="0" max="1" step="0.01" value="0"></label>
+          <label><span>Fee multiplier</span><input id="scenarioFeeInput" type="number" min="0" max="100" step="0.01" value="1"></label>
+          <label><span>Latency shock (ms)</span><input id="scenarioLatencyInput" type="number" min="0" step="1" value="0"></label>
+          <label><span>Dispute duration (hours)</span><input id="scenarioDisputeInput" type="number" min="0" step="1" value="0"></label>
+        </div>
+        <footer><button type="button" data-close-dialog>Cancel</button><button class="primary-action" type="submit">Run scenario</button></footer>
+      </form>
+    </dialog>
+
+    <dialog id="conditionalDialog" class="paper-dialog">
+      <form id="conditionalForm" method="dialog">
+        <header><div><span>Synthetic paper order</span><h2>New conditional</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <div class="dialog-field-grid">
+          <label><span>Type</span><select id="conditionalTypeInput"><option value="STOP_LIMIT">Stop limit</option><option value="TAKE_PROFIT">Take profit</option><option value="TRAILING_STOP">Trailing stop</option></select></label>
+          <label><span>Asset ID</span><input id="conditionalAssetInput" type="text" required spellcheck="false"></label>
+          <label><span>Trigger</span><select id="conditionalOperatorInput"><option value="LTE">At or below</option><option value="GTE">At or above</option></select></label>
+          <label><span>Trigger value</span><input id="conditionalTriggerInput" type="number" min="0.0001" max="0.9999" step="0.0001" value="0.5" required></label>
+          <label><span>Child side</span><select id="conditionalSideInput"><option value="SELL">Sell</option><option value="BUY">Buy</option></select></label>
+          <label><span>Child TIF</span><select id="conditionalTifInput"><option value="FAK">FAK</option><option value="FOK">FOK</option><option value="GTC">GTC</option></select></label>
+          <label><span>Child limit</span><input id="conditionalLimitInput" type="number" min="0.0001" max="0.9999" step="0.0001" value="0.49" required></label>
+          <label><span>Size (shares)</span><input id="conditionalSizeInput" type="number" min="0.0001" step="0.0001" value="1" required></label>
+        </div>
+        <label><span>Trailing percent</span><input id="conditionalTrailingInput" type="number" min="0.0001" max="0.9999" step="0.0001" value="0.05"></label>
+        <footer><button type="button" data-close-dialog>Cancel</button><button class="primary-action" type="submit">Arm order</button></footer>
+      </form>
+    </dialog>
+
+    <dialog id="modelDisclosureDialog" class="paper-dialog audit-dialog">
+      <div class="audit-dialog-content">
+        <header><div><span>Paper fidelity</span><h2>Model limits</h2></div><button type="button" data-close-dialog aria-label="Close">Close</button></header>
+        <div class="disclosure-status"><span class="status-pill warn">SIMULATED</span><strong>No venue order is submitted by this product.</strong></div>
+        <dl class="model-limit-list">
+          <div><dt>Market data</dt><dd>Execution uses persisted L2 evidence. Missing, stale or gapped evidence is rejected or explicitly degraded.</dd></div>
+          <div><dt>Taker fills</dt><dd>Depth is consumed from the bound book checkpoint; market impact and information leakage are not endogenous.</dd></div>
+          <div><dt>Maker fills</dt><dd>Queue estimates remain research output until immutable post-only holdout promotion gates pass.</dd></div>
+          <div><dt>Scenario runs</dt><dd>Scenario PnL is isolated research output and never changes paper cash, positions, ledger or official NAV.</dd></div>
+          <div><dt>Finality</dt><dd>Provisional fills are kept separate from confirmed, failed and voided outcomes in accounting and performance views.</dd></div>
+          <div><dt>Calibration</dt><dd>Each order exposes its fidelity level, model confidence, calibration domain, data quality and capacity result.</dd></div>
+        </dl>
+        <footer><button class="primary-action" type="button" data-close-dialog>Done</button></footer>
+      </div>
+    </dialog>
+
+    <script type="module" src="./paper-account.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: Polymarket CLOB API
+  description: API for retrieving the best bid or ask price for a token on the Polymarket CLOB.
+  version: 1.0.0
+
+servers:
+  - url: https://clob.polymarket.com
+
+paths:
+  /price:
+    get:
+      summary: Get market price (best bid or best ask)
+      description: Returns the price for a market based on the token ID and side (buy or sell).
+      parameters:
+        - name: token_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Token ID to get the price for.
+        - name: side
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [buy, sell]
+          description: Whether to get the buy (bid) or sell (ask) price.
+      responses:
+        '200':
+          description: Price successfully retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  price:
+                    type: string
+                    example: ".512"
+        '400':
+          description: Invalid request parameters
+        '500':
+          description: Server error

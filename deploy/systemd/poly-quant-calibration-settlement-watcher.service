@@ -1,0 +1,21 @@
+[Unit]
+Description=Calibration settlement discovery and redeem dry-run watcher
+Wants=network-online.target poly-quant-paper-live-shadow.service
+After=network-online.target poly-quant-paper-live-shadow.service poly-quant-profile12-trade-route.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/develop/polymarket/repos/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/live-calibration-runtime.env
+LoadCredential=live-db-password:%h/.config/prediction-market-quant/live-secrets/db-password
+LoadCredential=live-private-key:%h/.config/prediction-market-quant/live-secrets/private-key
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PYTHONPATH=%h/develop/polymarket/repos/paper-trading
+Environment=PYTHONNOUSERSITE=1
+ExecStart=/bin/bash %h/develop/polymarket/repos/paper-trading/scripts/run_calibration_settlement_watcher_secure.sh
+Restart=always
+RestartSec=10
+Nice=10
+
+[Install]
+WantedBy=default.target

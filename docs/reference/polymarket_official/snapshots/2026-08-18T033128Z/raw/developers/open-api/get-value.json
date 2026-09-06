@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  title: Polymarket Data API
+  version: 1.0.0
+  description: API for fetching the total USD value of a user's positions on Polymarket.
+
+servers:
+  - url: https://data-api.polymarket.com
+
+paths:
+  /value:
+    get:
+      summary: Fetch total USD value of a user's positions
+      description: Returns the total USD value of a user's positions in one or more markets.
+      parameters:
+        - name: user
+          in: query
+          description: The address of the user in question.
+          required: true
+          schema:
+            type: string
+            example: "0x0166a90c13a7273af742381b6cd7b098dbb00000"
+        - name: market
+          in: query
+          description: The conditionId of the market(s). Supports multiple CSV-separated values.
+          required: false
+          schema:
+            type: string
+            example: market1,market2
+      responses:
+        '200':
+          description: Successfully fetched the total value
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    user:
+                      type: string
+                      description: Address of the user
+                      example: "0x0166a90c13a7273af742381b6cd7b098dbb00000"
+                    value:
+                      type: number
+                      format: float
+                      description: Total USD value of the user's positions
+                      example: 0.483401645205675
+        '400':
+          description: Bad request (e.g., missing required parameters)
+        '500':
+          description: Internal server error
+      tags:
+        - Value
+
+components:
+  schemas: {}

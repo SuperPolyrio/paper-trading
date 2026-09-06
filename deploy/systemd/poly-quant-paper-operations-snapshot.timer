@@ -1,0 +1,12 @@
+[Unit]
+Description=Refresh paper simulator SLO and alert artifacts every 30 seconds
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=30s
+AccuracySec=2s
+Persistent=true
+Unit=poly-quant-paper-operations-snapshot.service
+
+[Install]
+WantedBy=timers.target

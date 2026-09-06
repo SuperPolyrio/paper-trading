@@ -1,0 +1,185 @@
+openapi: 3.0.3
+info:
+  title: Trades API
+  description: API for fetching trading data ordered by timestamp in descending order
+  version: 1.0.0
+servers:
+  - url: https://data-api.polymarket.com/
+    description: Production server
+
+paths:
+  /trades:
+    get:
+      summary: Get trades
+      description: Fetches trades. Ordered by timestamp in descending order (most recent trade first)
+      parameters:
+        - name: user
+          in: query
+          description: The address of the user in question
+          required: false
+          schema:
+            type: string
+            pattern: '^0x[a-fA-F0-9]{40}$'
+          example: "0x797D27B97F43429EC737f88B841e087c5C0D8298"
+        
+        - name: limit
+          in: query
+          description: The max number of trades to return, defaults to 100, max 500
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 500
+            default: 100
+        
+        - name: offset
+          in: query
+          description: The starting index for pagination
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 1000
+            default: 0
+        
+        - name: takerOnly
+          in: query
+          description: Flag that determines whether to return only taker orders. Defaults to true. Otherwise return maker and taker orders
+          required: false
+          schema:
+            type: boolean
+            default: true
+        
+        - name: filterType
+          in: query
+          description: Flag indicating whether to filter trades by a parameter
+          required: false
+          schema:
+            type: string
+            enum: [CASH, TOKENS]
+        
+        - name: filterAmount
+          in: query
+          description: The amount to filter by. Related to filterType above
+          required: false
+          schema:
+            type: number
+            format: float
+        
+        - name: market
+          in: query
+          description: The condition ID of the market in question. Supports comma separated values
+          required: false
+          schema:
+            type: string
+        
+        - name: side
+          in: query
+          description: The side of the trade
+          required: false
+          schema:
+            type: string
+            enum: [BUY, SELL]
+
+      responses:
+        '200':
+          description: Successful response with trades data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Trade'
+              example:
+                - proxyWallet: "0x6af75d4e4aaf700450efbac3708cce1665810ff1"
+                  side: "SELL"
+                  asset: "28774665463932631392072718054733378944250725021214679767633993409910"
+                  conditionId: "0x1731c2d00c722fa4d53d1bddae549f14cf1870e2cf59dc040e779104667"
+                  size: 160.26
+                  price: 0.89
+                  timestamp: 1724210494
+                  title: "2024 August hottest on record?"
+                  slug: "2024-august-hottest-on-record"
+                  icon: "https://polymarket-upload.s3.us-east-2.amazonaws.com/earth+on+fire.png"
+                  eventSlug: "2024-august-hottest-on-record"
+                  outcome: "Yes"
+                  outcomeIndex: 0
+                  name: "gopfan"
+                  pseudonym: "Mean-Record"
+                  bio: ""
+                  profileImage: "https://polymarket-upload.s3.us-east-2.amazonaws.com/rus_gopfan"
+                  profileImageOptimized: ""
+                  transactionHash: "0x5620f25e2772f0ec2c5b2f2f814f6e20b52b4363286a9043b626324"
+
+components:
+  schemas:
+    Trade:
+      type: object
+      properties:
+        proxyWallet:
+          type: string
+          description: The proxy wallet address
+          pattern: '^0x[a-fA-F0-9]{40}$'
+        side:
+          type: string
+          enum: [BUY, SELL]
+          description: The side of the trade
+        asset:
+          type: string
+          description: The asset identifier (large number as string)
+        conditionId:
+          type: string
+          description: The condition ID
+          pattern: '^0x[a-fA-F0-9]+$'
+        size:
+          type: number
+          format: float
+          description: The size of the trade
+        price:
+          type: number
+          format: float
+          description: The price of the trade
+        timestamp:
+          type: integer
+          format: int64
+          description: Unix timestamp of the trade
+        title:
+          type: string
+          description: The title of the market
+        slug:
+          type: string
+          description: URL-friendly slug for the market
+        icon:
+          type: string
+          format: uri
+          description: URL to the market icon
+        eventSlug:
+          type: string
+          description: URL-friendly slug for the event
+        outcome:
+          type: string
+          description: The outcome of the trade
+        outcomeIndex:
+          type: integer
+          description: The index of the outcome
+        name:
+          type: string
+          description: The name of the trader
+        pseudonym:
+          type: string
+          description: The pseudonym of the trader
+        bio:
+          type: string
+          description: Biography of the trader
+        profileImage:
+          type: string
+          format: uri
+          description: URL to the trader's profile image
+        profileImageOptimized:
+          type: string
+          format: uri
+          description: URL to the optimized profile image
+        transactionHash:
+          type: string
+          description: The transaction hash
+          pattern: '^0x[a-fA-F0-9]+$'

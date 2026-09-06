@@ -1,0 +1,60 @@
+groups:
+  - name: poly-quant-paper-safety
+    rules:
+      - alert: PaperUnsafeFill
+        expr: poly_quant_paper_unsafe_fill_count > 0
+        for: 0m
+        labels: {severity: critical}
+        annotations: {runbook: unsafe-fill}
+      - alert: PaperUnknownTerminal
+        expr: poly_quant_paper_unknown_terminal_order_count > 0
+        for: 0m
+        labels: {severity: critical}
+        annotations: {runbook: unknown-order-terminal}
+      - alert: PaperLedgerMismatch
+        expr: poly_quant_paper_ledger_reconciliation_mismatch_count > 0 or poly_quant_paper_reservation_mismatch_count > 0 or poly_quant_paper_journal_hash_mismatch_count > 0
+        for: 0m
+        labels: {severity: critical}
+        annotations: {runbook: journal-mismatch}
+      - alert: PaperAuthorityLost
+        expr: poly_quant_paper_authority_held == 0 or poly_quant_paper_authority_fencing_enforced == 0 or poly_quant_paper_worker_lease_remaining_ms < 1000
+        for: 0m
+        labels: {severity: critical}
+        annotations: {runbook: worker-lost-lease}
+      - alert: PaperDatabaseUnavailable
+        expr: poly_quant_paper_database_available == 0
+        for: 0m
+        labels: {severity: critical}
+        annotations: {runbook: db-high-latency}
+  - name: poly-quant-paper-latency
+    rules:
+      - alert: PaperExecutionBacklogHigh
+        expr: poly_quant_paper_execution_backlog_age_p99_ms >= 500
+        for: 2m
+        labels: {severity: warning}
+        annotations: {runbook: execution-backlog}
+      - alert: PaperTerminalLatencyHigh
+        expr: poly_quant_paper_terminal_result_p99_ms >= 2000
+        for: 5m
+        labels: {severity: warning}
+        annotations: {runbook: execution-latency}
+      - alert: PaperDatabaseLatencyHigh
+        expr: poly_quant_paper_db_latency_ms >= 50
+        for: 5m
+        labels: {severity: warning}
+        annotations: {runbook: db-high-latency}
+      - alert: PaperBookReadinessLow
+        expr: poly_quant_paper_ready_book_ratio < 0.98
+        for: 2m
+        labels: {severity: warning}
+        annotations: {runbook: lob-feed-divergence}
+      - alert: PaperWorkerHeartbeatStale
+        expr: poly_quant_paper_health_age_ms >= 30000
+        for: 1m
+        labels: {severity: warning}
+        annotations: {runbook: service-availability}
+      - alert: PaperDeploymentVersionSkew
+        expr: poly_quant_paper_deployment_version_skew > 0
+        for: 1m
+        labels: {severity: warning}
+        annotations: {runbook: deployment-version-skew}

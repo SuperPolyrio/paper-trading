@@ -1,0 +1,201 @@
+openapi: 3.0.3
+info:
+  title: Gamma API
+  description: API for interacting with Polymarket's Gamma endpoint to fetch market data. 
+  version: 1.0.0
+servers:
+  - url: https://gamma-api.polymarket.com
+    description: Production server
+paths:
+  /markets:
+    get:
+      summary: Fetch markets
+      description: Retrieves a list of markets with various filtering and sorting options.
+      operationId: getMarkets
+      parameters:
+        - name: limit
+          in: query
+          description: Limit query results
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: Pagination offset
+          required: false
+          schema:
+            type: integer
+        - name: order
+          in: query
+          description: Key to sort by
+          required: false
+          schema:
+            type: string
+        - name: ascending
+          in: query
+          description: Sort direction, defaults to true, requires the order parameter
+          required: false
+          schema:
+            type: boolean
+        - name: id
+          in: query
+          description: ID of a single market to query, can be used multiple times to fetch multiple markets
+          required: false
+          schema:
+            type: integer
+        - name: slug
+          in: query
+          description: Slug of a single market to query, can be used multiple times to fetch multiple markets
+          required: false
+          schema:
+            type: string
+        - name: archived
+          in: query
+          description: Filter by archived status
+          required: false
+          schema:
+            type: boolean
+        - name: active
+          in: query
+          description: Filter by active status
+          required: false
+          schema:
+            type: boolean
+        - name: closed
+          in: query
+          description: Filter by closed status
+          required: false
+          schema:
+            type: boolean
+        - name: clob_token_ids
+          in: query
+          description: Filter by clob token ID, can be used multiple times
+          required: false
+          schema:
+            type: string
+        - name: condition_ids
+          in: query
+          description: Filter by condition ID, can be used multiple times
+          required: false
+          schema:
+            type: string
+        - name: liquidity_num_min
+          in: query
+          description: Filter by minimum liquidity
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: liquidity_num_max
+          in: query
+          description: Filter by maximum liquidity
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: volume_num_min
+          in: query
+          description: Filter by minimum volume
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: volume_num_max
+          in: query
+          description: Filter by maximum volume
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: start_date_min
+          in: query
+          description: Filter by minimum start date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: start_date_max
+          in: query
+          description: Filter by maximum start date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: end_date_min
+          in: query
+          description: Filter by minimum end date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: end_date_max
+          in: query
+          description: Filter by maximum end date
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: tag_id
+          in: query
+          description: Filter by tag ID
+          required: false
+          schema:
+            type: integer
+        - name: related_tags
+          in: query
+          description: Include events with related tags, requires the tag_id parameter
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: A list of markets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Market'
+        '400':
+          description: Bad request, invalid query parameters
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    Market:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier of the market
+        slug:
+          type: string
+          description: The slug of the market
+        archived:
+          type: boolean
+          description: Whether the market is archived
+        active:
+          type: boolean
+          description: Whether the market is active
+        closed:
+          type: boolean
+          description: Whether the market is closed
+        liquidity:
+          type: number
+          format: double
+          description: The liquidity of the market
+        volume:
+          type: number
+          format: double
+          description: The trading volume of the market
+        start_date:
+          type: string
+          format: date-time
+          description: The start date of the market
+        end_date:
+          type: string
+          format: date-time
+          description: The end date of the market
+      required:
+        - id
+        - slug

@@ -1,0 +1,7 @@
+{
+  "name": "@polymarket-quant/paper-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts"
+}

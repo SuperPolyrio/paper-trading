@@ -1,0 +1,19 @@
+[Unit]
+Description=Build paper simulator SLO, alert, and Prometheus artifacts
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/develop/polymarket/repos/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-live-shadow.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PYTHONPATH=%h/develop/polymarket/repos/paper-trading
+ExecStart=/bin/bash %h/develop/polymarket/repos/paper-trading/scripts/run_paper_operations_snapshot.sh
+Nice=10
+
+[Install]
+WantedBy=default.target

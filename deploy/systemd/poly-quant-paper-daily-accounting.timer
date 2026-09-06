@@ -1,0 +1,11 @@
+[Unit]
+Description=Run paper trading accounting closure every UTC day
+
+[Timer]
+OnCalendar=*-*-* 00:10:00 UTC
+Persistent=true
+RandomizedDelaySec=120
+Unit=poly-quant-paper-daily-accounting.service
+
+[Install]
+WantedBy=timers.target

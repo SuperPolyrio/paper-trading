@@ -1,0 +1,20 @@
+[Unit]
+Description=Live real-vs-paper calibration position and PnL monitor
+Wants=network-online.target poly-quant-paper-live-shadow.service
+After=network-online.target poly-quant-paper-live-shadow.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/develop/polymarket/repos/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/live-calibration-runtime.env
+LoadCredential=live-db-password:%h/.config/prediction-market-quant/live-secrets/db-password
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PYTHONPATH=%h/develop/polymarket/repos/paper-trading
+Environment=PYTHONNOUSERSITE=1
+ExecStart=/bin/bash %h/develop/polymarket/repos/paper-trading/scripts/run_calibration_portfolio_monitor_secure.sh
+Restart=always
+RestartSec=5
+Nice=5
+
+[Install]
+WantedBy=default.target

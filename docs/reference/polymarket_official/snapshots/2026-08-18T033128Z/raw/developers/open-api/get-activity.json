@@ -1,0 +1,152 @@
+openapi: 3.0.3
+info:
+  title: Polymarket Data API
+  description: |
+    Fetches Polymarket onchain activity for a user. 
+    Ordered by timestamp in descending order (most recent event first).
+  version: 1.0.0
+
+servers:
+  - url: https://data-api.polymarket.com
+
+paths:
+  /activity:
+    get:
+      summary: Get user onchain activity
+      description: Returns trades and activity history for a specified wallet, optionally filtered by market, type, time, and side.
+      parameters:
+        - name: user
+          in: query
+          required: true
+          description: The address of the user in question
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Max number of trades to return (default 100, max 500)
+          schema:
+            type: integer
+            default: 100
+            maximum: 500
+        - name: offset
+          in: query
+          description: Starting index for pagination
+          schema:
+            type: integer
+            default: 0
+            maximum: 1000
+        - name: market
+          in: query
+          description: Comma-separated list of market condition IDs to filter
+          schema:
+            type: string
+        - name: type
+          in: query
+          description: |
+            Activity types to filter (comma-separated). 
+            Options: TRADE, SPLIT, MERGE, REDEEM, REWARD, CONVERSION
+          schema:
+            type: string
+        - name: start
+          in: query
+          description: Start timestamp (in seconds)
+          schema:
+            type: integer
+        - name: end
+          in: query
+          description: End timestamp (in seconds)
+          schema:
+            type: integer
+        - name: side
+          in: query
+          description: Side of trade (BUY or SELL). Applies only to trades.
+          schema:
+            type: string
+            enum: [BUY, SELL]
+        - name: sortBy
+          in: query
+          description: Field to sort by (TIMESTAMP, TOKENS, CASH). Defaults to TIMESTAMP.
+          schema:
+            type: string
+            enum: [TIMESTAMP, TOKENS, CASH]
+        - name: sortDirection
+          in: query
+          description: Sort order. Defaults to DESC.
+          schema:
+            type: string
+            enum: [ASC, DESC]
+            default: DESC
+      responses:
+        '200':
+          description: List of user activities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    proxyWallet:
+                      type: string
+                    timestamp:
+                      type: integer
+                    conditionId:
+                      type: string
+                    type:
+                      type: string
+                    size:
+                      type: number
+                    usdcSize:
+                      type: number
+                    transactionHash:
+                      type: string
+                    price:
+                      type: number
+                    asset:
+                      type: string
+                    side:
+                      type: string
+                    outcomeIndex:
+                      type: integer
+                    title:
+                      type: string
+                    slug:
+                      type: string
+                    icon:
+                      type: string
+                    eventSlug:
+                      type: string
+                    outcome:
+                      type: string
+                    name:
+                      type: string
+                    pseudonym:
+                      type: string
+                    bio:
+                      type: string
+                    profileImage:
+                      type: string
+                    profileImageOptimized:
+                      type: string
+              example:
+                - proxyWallet: "0x6af75d4e4aaf700450efbac3708cce1665810ff1"
+                  timestamp: 1723772457
+                  conditionId: "0x2c95c926e924f243aab41e96a90d22fcaf8cf273a678a07c49abb95fde4b"
+                  type: "TRADE"
+                  size: 600
+                  usdcSize: 354
+                  transactionHash: "0x40b774108c44bf3182002f3a296c8e5642ba91f304d45243e60ade3"
+                  price: 0.59
+                  asset: "1078361466543703811067135455666524322550487241220245657982982772126"
+                  side: "BUY"
+                  outcomeIndex: 1
+                  title: "August temperature increase greater than 1.29°C?"
+                  slug: "august-temperature-increase-greater-than-1pt29c"
+                  icon: "https://polymarket-upload.s3.us-east-2.amazonaws.com/earth+on+fire.png"
+                  eventSlug: "august-2024-temperature-increase-c"
+                  outcome: "No"
+                  name: "gopfan"
+                  pseudonym: "Mean-Record"
+                  bio: ""
+                  profileImage: "https://polymarket-upload.s3.us-east-2.amazonaws.com/rus_gop.png"
+                  profileImageOptimized: ""

@@ -1,0 +1,72 @@
+openapi: 3.0.3
+info:
+  title: Polymarket CLOB API
+  version: 1.0.0
+  description: API to retrieve order book summary for a market on Polymarket.
+
+servers:
+  - url: https://clob.polymarket.com
+
+paths:
+  /book:
+    get:
+      summary: Get Single Book
+      description: Get an order book summary for a market.
+      parameters:
+        - in: query
+          name: token_id
+          required: true
+          schema:
+            type: string
+          description: Token ID of the market to get the book for.
+      responses:
+        '200':
+          description: A successful response containing the order book summary.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  market:
+                    type: string
+                    description: Condition ID.
+                  asset_id:
+                    type: string
+                    description: ID of the asset/token.
+                  hash:
+                    type: string
+                    description: Hash summary of the orderbook content.
+                  timestamp:
+                    type: string
+                    description: Unix timestamp of the book generation in milliseconds (1/1,000 second).
+                  min_order_size:
+                    type: string
+                    description: Minimum allowed order size.
+                  neg_risk:
+                    type: boolean
+                    description: Boolean indicating whether the market is neg_risk.
+                  tick_size:
+                    type: string
+                    description: Current tick size for this market.
+                  bids:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OrderSummary'
+                    description: List of bid levels.
+                  asks:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OrderSummary'
+                    description: List of ask levels.
+
+components:
+  schemas:
+    OrderSummary:
+      type: object
+      properties:
+        price:
+          type: string
+          description: Price level.
+        size:
+          type: string
+          description: Size at that price level.

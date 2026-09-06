@@ -1,0 +1,27 @@
+[Unit]
+Description=Polymarket isolated live calibration probe
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/live-calibration-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-db-control.env
+LoadCredential=live-private-key:%h/.config/prediction-market-quant/live-secrets/private-key
+LoadCredential=live-api-key:%h/.config/prediction-market-quant/live-secrets/api-key
+LoadCredential=live-api-secret:%h/.config/prediction-market-quant/live-secrets/api-secret
+LoadCredential=live-api-passphrase:%h/.config/prediction-market-quant/live-secrets/api-passphrase
+LoadCredential=live-db-password:%h/.config/prediction-market-quant/live-secrets/db-password
+Environment=PATH=/opt/polyData/.venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONPATH=/opt/paper-trading
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+UMask=0077
+ExecStart=/opt/paper-trading/scripts/run_live_calibration_probe_secure.sh
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/opt/paper-trading/runtime_outputs/taker_calibration
+
+# Intentionally no [Install] section: a prepared run is started explicitly.

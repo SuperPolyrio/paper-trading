@@ -1,0 +1,12 @@
+[Unit]
+Description=Periodically refresh the GCP paper execution catalog
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+RandomizedDelaySec=5s
+Persistent=true
+Unit=poly-quant-paper-execution-catalog-sync.service
+
+[Install]
+WantedBy=timers.target

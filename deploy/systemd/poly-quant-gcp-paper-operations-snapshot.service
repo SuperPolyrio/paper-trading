@@ -1,0 +1,34 @@
+[Unit]
+Description=Build GCP paper simulator SLO, alert, and Prometheus artifacts
+After=network-online.target
+Wants=network-online.target
+RequiresMountsFor=/mnt/l2-archive
+ConditionPathIsMountPoint=/mnt/l2-archive
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-live-shadow.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-db-active.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PATH=/opt/polyData/.venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONPATH=/opt/paper-trading
+Environment=PREDICTION_MARKET_QUANT_PYTHON_BIN=/opt/polyData/.venv/bin/python
+Environment=PAPER_OPERATIONS_OUTPUT_DIR=/mnt/l2-archive/.health/paper-live-shadow/operations
+Environment=PAPER_OPERATIONS_STATUS_PATH=/mnt/l2-archive/.health/paper-live-shadow/operations-status.json
+Environment=PAPER_OPERATIONS_METRICS_PATH=/mnt/l2-archive/.health/paper-live-shadow/operations-metrics.prom
+ExecStart=/bin/bash /opt/paper-trading/scripts/run_paper_operations_snapshot.sh
+TimeoutStartSec=60
+Nice=10
+MemoryMax=192M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/mnt/l2-archive/.health/paper-live-shadow
+
+[Install]
+WantedBy=default.target

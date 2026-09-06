@@ -1,0 +1,32 @@
+[Unit]
+Description=Run six-hour GCP-colocated paper simulator SLO soak
+Wants=network-online.target poly-quant-gcp-paper-live-shadow.service
+After=network-online.target poly-quant-gcp-paper-live-shadow.service
+StartLimitIntervalSec=900
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-live-shadow.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-db-active.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PATH=/opt/polyData/.venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONPATH=/opt/paper-trading
+Environment=PREDICTION_MARKET_QUANT_PYTHON_BIN=/opt/polyData/.venv/bin/python
+Environment=PAPER_LIVE_ACCEPTANCE_DURATION_SECONDS=21600
+Environment=PAPER_LIVE_ACCEPTANCE_INTERVAL_SECONDS=60
+Environment=PAPER_LIVE_ACCEPTANCE_MIN_INTENTS=3
+Environment=PAPER_LIVE_ACCEPTANCE_COMPLETED_FAILURE_EXIT_CODE=42
+Environment=PAPER_LIVE_ACCEPTANCE_OUTPUT_DIR=runtime_outputs/paper_live_shadow/gcp_soak_6h_spool_v1
+Environment=PAPER_LIVE_ACCEPTANCE_RESUME_STATE=runtime_outputs/paper_live_shadow/gcp_soak_6h_spool_v1/soak-state.json
+ExecStart=/bin/bash /opt/paper-trading/scripts/run_paper_live_shadow_acceptance_soak.sh
+ExecStopPost=/bin/bash %h/develop/polymarket/repos/paper-trading/scripts/start_gcp_paper_soak_24h_after_pass.sh
+# Resume unexpected process failures, but retain completed FAIL evidence.
+Restart=on-failure
+RestartSec=15s
+RestartPreventExitStatus=42
+Nice=10

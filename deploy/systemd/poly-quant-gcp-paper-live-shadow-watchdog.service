@@ -1,0 +1,13 @@
+[Unit]
+Description=Recover a stale GCP paper shadow after its active DB returns
+After=network-online.target poly-quant-gcp-paper-live-shadow.service
+Wants=network-online.target poly-quant-gcp-paper-live-shadow.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-live-shadow.env
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+ExecStart=/bin/bash /opt/paper-trading/scripts/check_gcp_paper_live_shadow.sh
+TimeoutStartSec=210

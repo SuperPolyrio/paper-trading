@@ -1,0 +1,27 @@
+[Unit]
+Description=Polymarket tenant-scoped Paper API
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-api.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+LoadCredential=paper-api-key-pepper:%h/.config/prediction-market-quant/secrets/paper-api-key-pepper
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PYTHONPATH=/opt/paper-trading
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/bin/bash /opt/paper-trading/scripts/run_paper_api_secure.sh --host 127.0.0.1 --port 18510
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

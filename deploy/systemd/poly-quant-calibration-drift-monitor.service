@@ -1,0 +1,15 @@
+[Unit]
+Description=Evaluate taker calibration drift and fail-closed model status
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/develop/polymarket/repos/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/live-calibration-runtime.env
+LoadCredential=live-db-password:%h/.config/prediction-market-quant/live-secrets/db-password
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PYTHONPATH=%h/develop/polymarket/repos/paper-trading
+Environment=PYTHONNOUSERSITE=1
+ExecStart=/bin/bash %h/develop/polymarket/repos/paper-trading/scripts/run_calibration_drift_monitor_secure.sh --once --window 50 --minimum-samples 50 --group-minimum-samples 20 --false-positive-threshold 0.02 --vwap-p95-threshold-ticks 1 --rest-mismatch-threshold 0.02 --latency-p95-ratio-threshold 2 --latency-minimum-samples 10
+SuccessExitStatus=2
+Nice=10

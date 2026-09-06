@@ -1,0 +1,16 @@
+[Unit]
+Description=Daily paper trading cash, position, and reservation reconciliation
+After=network-online.target poly-quant-paper-live-shadow.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/develop/polymarket/repos/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-live-shadow.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PYTHONPATH=%h/develop/polymarket/repos/paper-trading
+Environment=PYTHONNOUSERSITE=1
+ExecStart=/bin/bash %h/develop/polymarket/repos/paper-trading/scripts/run_paper_daily_accounting.sh
+Nice=10

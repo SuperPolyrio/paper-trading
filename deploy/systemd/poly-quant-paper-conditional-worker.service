@@ -1,0 +1,25 @@
+[Unit]
+Description=Polymarket multi-tenant Paper conditional order worker
+After=network-online.target postgresql.service poly-quant-paper-api.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PYTHONPATH=/opt/paper-trading
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/bin/bash /opt/paper-trading/scripts/run_paper_conditional_worker.sh --all-tenants --interval-seconds 0.5
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

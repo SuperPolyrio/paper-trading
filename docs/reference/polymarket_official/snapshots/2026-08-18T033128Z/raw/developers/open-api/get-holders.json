@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: Polymarket Data API
+  description: API for retrieving the top holders of a market
+  version: "1.0.0"
+servers:
+  - url: https://data-api.polymarket.com
+paths:
+  /holders:
+    get:
+      summary: Get top holders of a market
+      description: Fetches the top holders of a specified market token.
+      parameters:
+        - name: market
+          in: query
+          description: The market (conditionId) to query.
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Maximum number of holders to return per token. Capped at 20.
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 20
+      responses:
+        '200':
+          description: A list of token holders
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Accept:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    token:
+                      type: string
+                    holders:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          proxyWallet:
+                            type: string
+                          bio:
+                            type: string
+                          asset:
+                            type: string
+                          pseudonym:
+                            type: string
+                          amount:
+                            type: number
+                            format: float
+                          displayUsernamePublic:
+                            type: boolean
+                          outcomeIndex:
+                            type: integer
+                          name:
+                            type: string
+                          profileImage:
+                            type: string
+                          profileImageOptimized:
+                            type: string
+              example:
+                - token: "70018807773238020915361161897719073078804647330583488591369599275024"
+                  holders:
+                    - proxyWallet: "0xa59516996b5803e2b1ecb9df4db492c494743fde"
+                      bio: ""
+                      asset: "70018807773238020915361161897719073078804647330583488591369599275024"
+                      pseudonym: "Bossy-Figurine"
+                      amount: 215678.947713
+                      displayUsernamePublic: true
+                      outcomeIndex: 0
+                      name: "ExampleGuy"
+                      profileImage: ""
+                      profileImageOptimized: ""

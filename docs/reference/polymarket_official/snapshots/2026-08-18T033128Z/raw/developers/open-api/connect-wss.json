@@ -1,0 +1,173 @@
+asyncapi: 3.0.0
+info:
+  title: Polymarket WebSocket Market Subscription
+  version: 1.0.0
+  description: >
+    WebSocket client that subscribes to Polymarket's CLOB market data via asset
+    IDs.
+
+    Handles market book updates, price changes, and last trade price
+    notifications.
+servers:
+  production:
+    host: ws-subscriptions-clob.polymarket.com
+    pathname: /ws/market
+    protocol: wss
+    description: Production server for Polymarket market WebSocket data.
+channels:
+  market:
+    address: market
+    messages:
+      publish.message.0:
+        $ref: '#/components/messages/SubscribeRequest'
+      publish.message.1:
+        $ref: '#/components/messages/PingMessage'
+      subscribe.message.0:
+        $ref: '#/components/messages/BookMessage'
+      subscribe.message.1:
+        $ref: '#/components/messages/PriceChangeMessage'
+      subscribe.message.2:
+        $ref: '#/components/messages/LastTradePriceMessage'
+    description: Channel for subscribing to market updates based on asset IDs.
+operations:
+  market.publish:
+    action: receive
+    channel:
+      $ref: '#/channels/market'
+    messages:
+      - $ref: '#/channels/market/messages/publish.message.0'
+      - $ref: '#/channels/market/messages/publish.message.1'
+  market.subscribe:
+    action: send
+    channel:
+      $ref: '#/channels/market'
+    messages:
+      - $ref: '#/channels/market/messages/subscribe.message.0'
+      - $ref: '#/channels/market/messages/subscribe.message.1'
+      - $ref: '#/channels/market/messages/subscribe.message.2'
+components:
+  messages:
+    SubscribeRequest:
+      name: SubscribeRequest
+      title: Market Subscription Message
+      summary: Client subscribes to a specific asset ID to receive updates.
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          type:
+            type: string
+            enum:
+              - Market
+          assets_ids:
+            type: array
+            items:
+              type: string
+            description: List of asset IDs to subscribe to (first element used).
+        required:
+          - type
+          - assets_ids
+    PingMessage:
+      name: PingMessage
+      title: Keepalive Ping
+      summary: Periodic ping message sent every 30 seconds.
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          type:
+            type: string
+            enum:
+              - ping
+        required:
+          - type
+    BookMessage:
+      name: BookMessage
+      title: Order Book Message
+      summary: Snapshot of order book data for an asset.
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            enum:
+              - book
+          asset_id:
+            type: string
+          market:
+            type: string
+          bids:
+            type: array
+            items:
+              type: object
+              properties:
+                price:
+                  type: number
+                size:
+                  type: number
+          asks:
+            type: array
+            items:
+              type: object
+              properties:
+                price:
+                  type: number
+                size:
+                  type: number
+    PriceChangeMessage:
+      name: PriceChangeMessage
+      title: Price Change Notification
+      summary: Notification when the price changes in the order book.
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            enum:
+              - price_change
+          asset_id:
+            type: string
+          market:
+            type: string
+          price:
+            type: number
+          size:
+            type: number
+          side:
+            type: string
+            enum:
+              - buy
+              - sell
+          time:
+            type: string
+    LastTradePriceMessage:
+      name: LastTradePriceMessage
+      title: Last Trade Price Event
+      summary: Information on the most recent trade that occurred.
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          event_type:
+            type: string
+            enum:
+              - last_trade_price
+          asset_id:
+            type: string
+          market:
+            type: string
+          fee_rate_bps:
+            type: number
+          price:
+            type: number
+          side:
+            type: string
+            enum:
+              - buy
+              - sell
+          size:
+            type: number
+          timestamp:
+            type: string

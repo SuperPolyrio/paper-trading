@@ -1,0 +1,33 @@
+[Unit]
+Description=Polymarket GCP paper worker health API
+Wants=network-online.target poly-quant-gcp-paper-live-shadow.service
+After=network-online.target poly-quant-gcp-paper-live-shadow.service
+RequiresMountsFor=/mnt/l2-archive
+ConditionPathIsMountPoint=/mnt/l2-archive
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-live-shadow.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-db-active.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PATH=/opt/polyData/.venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONPATH=/opt/paper-trading
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PAPER_RUNTIME_PYTHON_BIN=/opt/polyData/.venv/bin/python
+ExecStart=/opt/paper-trading/scripts/run_paper_health_secure.sh
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+MemoryMax=128M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadOnlyPaths=/mnt/l2-archive/.health/paper-live-shadow
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,154 @@
+openapi: 3.0.3
+info:
+  title: Polymarket Data API
+  description: API for retrieving user position data from Polymarket.
+  version: 1.0.0
+
+servers:
+  - url: https://data-api.polymarket.com
+    description: Production server
+
+paths:
+  /positions:
+    get:
+      summary: Get User Positions
+      description: Fetches current positions for a given user address, optionally filtered by market or event and other parameters.
+      operationId: getPositions
+      parameters:
+        - name: user
+          in: query
+          required: true
+          description: The Polygon/Profile address of the user. i.e. 0x6f05f5c...
+          schema:
+            type: string
+        - name: market
+          in: query
+          description: One or more conditionIds, comma separated. Cannot be used with `eventId`.
+          schema:
+            type: string
+        - name: sizeThreshold
+          in: query
+          description: The minimum position size to include. Defaults to 1.0.
+          schema:
+            type: number
+            default: 1.0
+        - name: redeemable
+          in: query
+          description: Filter positions that are redeemable.
+          schema:
+            type: boolean
+        - name: mergeable
+          in: query
+          description: Filter positions that are mergeable.
+          schema:
+            type: boolean
+        - name: title
+          in: query
+          description: Filter by market title.
+          schema:
+            type: string
+        - name: eventId
+          in: query
+          description: The ID of the event. Cannot be used with `market`.
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Max number of positions to return. Defaults to 50, max is 500.
+          schema:
+            type: integer
+            default: 50
+            maximum: 500
+        - name: offset
+          in: query
+          description: Index to start paginated results from. Defaults to 0.
+          schema:
+            type: integer
+            default: 0
+        - name: sortBy
+          in: query
+          description: |
+            Criteria to sort results by:
+              - TOKENS
+              - CURRENT
+              - INITIAL
+              - CASHPNL
+              - PERCENTPNL
+              - TITLE
+              - RESOLVING
+              - PRICE
+          schema:
+            type: string
+            enum: [TOKENS, CURRENT, INITIAL, CASHPNL, PERCENTPNL, TITLE, RESOLVING, PRICE]
+        - name: sortDirection
+          in: query
+          description: Sorting direction, either ASC or DESC. Defaults to DESC.
+          schema:
+            type: string
+            enum: [ASC, DESC]
+            default: DESC
+
+      responses:
+        '200':
+          description: A list of user positions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    proxyWallet:
+                      type: string
+                    asset:
+                      type: string
+                    conditionId:
+                      type: string
+                    size:
+                      type: number
+                    avgPrice:
+                      type: number
+                    initialValue:
+                      type: number
+                    currentValue:
+                      type: number
+                    cashPnl:
+                      type: number
+                    percentPnl:
+                      type: number
+                    totalBought:
+                      type: number
+                    realizedPnl:
+                      type: number
+                    percentRealizedPnl:
+                      type: number
+                    curPrice:
+                      type: number
+                    redeemable:
+                      type: boolean
+                    title:
+                      type: string
+                    slug:
+                      type: string
+                    icon:
+                      type: string
+                      format: uri
+                    eventSlug:
+                      type: string
+                    outcome:
+                      type: string
+                    outcomeIndex:
+                      type: integer
+                    oppositeOutcome:
+                      type: string
+                    oppositeAsset:
+                      type: string
+                    endDate:
+                      type: string
+                      format: date
+                    negativeRisk:
+                      type: boolean
+        '400':
+          description: Invalid request
+        '500':
+          description: Internal server error

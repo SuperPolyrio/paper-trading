@@ -1,0 +1,42 @@
+[Unit]
+Description=Polymarket GCP colocated paper execution shadow
+Wants=network-online.target poly-quant-gcp-l2-execution-redundant.service
+After=network-online.target poly-quant-gcp-l2-execution-redundant.service
+RequiresMountsFor=/mnt/l2-archive
+ConditionPathIsMountPoint=/mnt/l2-archive
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/paper-trading
+EnvironmentFile=%h/.config/prediction-market-quant/paper-runtime.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-live-shadow.env
+EnvironmentFile=-%h/.config/prediction-market-quant/paper-db-active.env
+LoadCredential=paper-db-password:%h/.config/prediction-market-quant/secrets/paper-db-password
+Environment=PAPER_SECURITY_REQUIRE_DB_CREDENTIAL_FILE=1
+Environment=POLY_QUANT_DISABLE_DOTENV=1
+Environment=PATH=/opt/polyData/.venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONPATH=/opt/paper-trading
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=MALLOC_ARENA_MAX=2
+RuntimeDirectory=poly-quant
+ExecStart=/opt/paper-trading/scripts/run_gcp_paper_live_shadow.sh
+ExecStop=/usr/bin/touch %t/poly-quant/paper-live-shadow.stop
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+# A paper DB call is allowed to run for 60s. Leave enough time for the
+# signal-aware loop to finish that call and flush STOPPED evidence.
+TimeoutStopSec=75
+LimitNOFILE=16384
+MemoryHigh=768M
+MemoryMax=1G
+Nice=5
+CPUWeight=1000
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/mnt/l2-archive/.health /mnt/l2-archive/control %t/poly-quant
+
+[Install]
+WantedBy=default.target

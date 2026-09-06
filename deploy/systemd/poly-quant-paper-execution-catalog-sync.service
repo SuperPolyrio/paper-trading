@@ -1,0 +1,12 @@
+[Unit]
+Description=Refresh the GCP paper execution catalog outside the order hot path
+After=network-online.target poly-quant-paper-db-control-tunnel.service
+Wants=network-online.target poly-quant-paper-db-control-tunnel.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/develop/polymarket/repos/paper-trading
+ExecStart=/bin/bash %h/develop/polymarket/repos/paper-trading/scripts/run_paper_execution_catalog_sync.sh
+TimeoutStartSec=10min
+Nice=10
+IOSchedulingClass=idle

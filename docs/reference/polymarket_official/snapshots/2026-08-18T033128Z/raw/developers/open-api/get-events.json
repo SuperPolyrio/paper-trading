@@ -1,0 +1,199 @@
+openapi: 3.0.3
+info:
+  title: Gamma API
+  description: API for retrieving events from the Gamma endpoint of Polymarket.
+  version: 1.0.0
+servers:
+  - url: https://gamma-api.polymarket.com
+    description: Production server
+paths:
+  /events:
+    get:
+      summary: Retrieve events
+      description: Fetches a list of events with various filtering and sorting options.
+      parameters:
+        - name: limit
+          in: query
+          description: Limit query results
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: Pagination offset
+          required: false
+          schema:
+            type: integer
+        - name: order
+          in: query
+          description: Key to sort by
+          required: false
+          schema:
+            type: string
+        - name: ascending
+          in: query
+          description: Sort direction, defaults to true, requires the order parameter
+          required: false
+          schema:
+            type: boolean
+        - name: id
+          in: query
+          description: ID of a single event to query, can be used multiple times to fetch multiple events
+          required: false
+          schema:
+            type: integer
+        - name: slug
+          in: query
+          description: Slug of a single event to query, can be used multiple times to fetch multiple events
+          required: false
+          schema:
+            type: string
+        - name: archived
+          in: query
+          description: Filter by archived status
+          required: false
+          schema:
+            type: boolean
+        - name: active
+          in: query
+          description: Filter by active status
+          required: false
+          schema:
+            type: boolean
+        - name: closed
+          in: query
+          description: Filter by closed status
+          required: false
+          schema:
+            type: boolean
+        - name: liquidity_min
+          in: query
+          description: Filter by minimum liquidity
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: liquidity_max
+          in: query
+          description: Filter by maximum liquidity
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: volume_min
+          in: query
+          description: Filter by minimum volume
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: volume_max
+          in: query
+          description: Filter by maximum volume
+          required: false
+          schema:
+            type: number
+            format: double
+        - name: start_date_min
+          in: query
+          description: Filter by minimum start date
+          required: false
+          schema:
+            type: string
+        - name: start_date_max
+          in: query
+          description: Filter by maximum start date
+          required: false
+          schema:
+            type: string
+        - name: end_date_min
+          in: query
+          description: Filter by minimum end date
+          required: false
+          schema:
+            type: string
+        - name: end_date_max
+          in: query
+          description: Filter by maximum end date
+          required: false
+          schema:
+            type: string
+        - name: tag
+          in: query
+          description: Filter by tag labels
+          required: false
+          schema:
+            type: string
+        - name: tag_id
+          in: query
+          description: Filter by tag ID
+          required: false
+          schema:
+            type: integer
+        - name: related_tags
+          in: query
+          description: Include events with related tags, requires the tag_id parameter
+          required: false
+          schema:
+            type: boolean
+        - name: tag_slug
+          in: query
+          description: Filter by tag slug
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: Event ID
+                    slug:
+                      type: string
+                      description: Event slug
+                    liquidity:
+                      type: number
+                      format: double
+                      description: Liquidity of the event
+                    volume:
+                      type: number
+                      format: double
+                      description: Volume of the event
+                    start_date:
+                      type: string
+                      description: Start date of the event
+                    end_date:
+                      type: string
+                      description: End date of the event
+                    tags:
+                      type: array
+                      items:
+                        type: string
+                      description: Tags associated with the event
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message

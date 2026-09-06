@@ -1,0 +1,2178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/apply-referral-code</loc>
+    <lastmod>2026-08-14T13:35:57.325Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/bridge/create-bridge-addresses</loc>
+    <lastmod>2026-08-14T13:35:56.646Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/bridge/create-withdrawal-addresses</loc>
+    <lastmod>2026-08-14T13:35:56.674Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/bridge/get-a-quote</loc>
+    <lastmod>2026-08-14T13:35:56.657Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/bridge/get-supported-assets</loc>
+    <lastmod>2026-08-14T13:35:56.606Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/bridge/get-transaction-status</loc>
+    <lastmod>2026-08-12T19:47:48.486Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/builders/get-aggregated-builder-leaderboard</loc>
+    <lastmod>2026-08-14T13:35:56.296Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/builders/get-daily-builder-volume-time-series</loc>
+    <lastmod>2026-08-14T13:35:56.307Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/cancel-all-orders</loc>
+    <lastmod>2026-08-14T13:35:56.940Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/cancel-orders</loc>
+    <lastmod>2026-08-14T13:35:56.915Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/cancel-orders-coid</loc>
+    <lastmod>2026-08-14T13:35:56.927Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/check-invite-code</loc>
+    <lastmod>2026-08-14T13:35:56.890Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/combo-markets/get-combo-markets</loc>
+    <lastmod>2026-06-11T16:11:43.852Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/comments/get-comments-by-comment-id</loc>
+    <lastmod>2026-08-14T13:35:56.430Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/comments/get-comments-by-user-address</loc>
+    <lastmod>2026-08-14T13:35:56.439Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/comments/list-comments</loc>
+    <lastmod>2026-08-14T13:35:56.419Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-closed-positions-for-a-user</loc>
+    <lastmod>2026-08-14T13:35:56.214Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-current-positions-for-a-user</loc>
+    <lastmod>2026-08-14T13:35:56.205Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-positions-for-a-market</loc>
+    <lastmod>2026-08-14T13:35:56.265Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-top-holders-for-markets</loc>
+    <lastmod>2026-08-14T13:35:55.871Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-total-value-of-a-users-positions</loc>
+    <lastmod>2026-08-14T13:35:56.234Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-trader-leaderboard-rankings</loc>
+    <lastmod>2026-08-14T13:35:56.285Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-trades-for-a-user-or-markets</loc>
+    <lastmod>2026-08-14T13:35:56.245Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-user-activity</loc>
+    <lastmod>2026-08-14T13:35:56.225Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-user-combo-activity</loc>
+    <lastmod>2026-08-10T16:07:47.852Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/core/get-user-combo-positions</loc>
+    <lastmod>2026-08-10T16:07:47.842Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/create-account-invite</loc>
+    <lastmod>2026-08-14T13:35:57.301Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/create-orders</loc>
+    <lastmod>2026-08-14T13:35:56.903Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/create-proxy</loc>
+    <lastmod>2026-08-14T13:35:56.999Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/data/get-midpoint-price</loc>
+    <lastmod>2026-06-15T19:34:08.835Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/data/get-server-time</loc>
+    <lastmod>2026-06-15T19:34:08.994Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/delete-proxy</loc>
+    <lastmod>2026-08-14T13:35:57.010Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/events/get-event-by-id</loc>
+    <lastmod>2026-08-14T13:35:55.784Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/events/get-event-by-slug</loc>
+    <lastmod>2026-08-14T13:35:55.794Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/events/get-event-tags</loc>
+    <lastmod>2026-08-14T13:35:55.806Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/events/list-events</loc>
+    <lastmod>2026-08-14T13:35:55.773Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/events/list-events-keyset-pagination</loc>
+    <lastmod>2026-05-15T11:17:13.665Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/geoblock</loc>
+    <lastmod>2026-08-14T13:36:01.075Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-account-limits</loc>
+    <lastmod>2026-08-14T13:35:57.252Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-account-referral</loc>
+    <lastmod>2026-08-14T13:35:57.313Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-account-rewards</loc>
+    <lastmod>2026-08-14T13:35:57.265Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-account-stats</loc>
+    <lastmod>2026-08-14T13:35:57.241Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-auto-cancel-status</loc>
+    <lastmod>2026-08-14T13:35:57.288Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-balances</loc>
+    <lastmod>2026-08-14T13:35:57.087Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-bbo</loc>
+    <lastmod>2026-08-14T13:35:56.792Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-book</loc>
+    <lastmod>2026-08-14T13:35:56.804Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-collateral-assets</loc>
+    <lastmod>2026-08-14T13:35:56.721Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-credentials</loc>
+    <lastmod>2026-08-14T13:35:57.022Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-deposits</loc>
+    <lastmod>2026-08-14T13:35:57.205Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-equity</loc>
+    <lastmod>2026-08-14T13:35:57.123Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-exchange-info</loc>
+    <lastmod>2026-08-14T13:35:56.710Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-fees</loc>
+    <lastmod>2026-08-14T13:35:56.866Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-fills</loc>
+    <lastmod>2026-08-14T13:35:57.111Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-funding-charges</loc>
+    <lastmod>2026-08-14T13:35:57.169Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-historical-funding</loc>
+    <lastmod>2026-08-14T13:35:56.853Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-index</loc>
+    <lastmod>2026-08-14T13:35:56.817Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-instrument-config</loc>
+    <lastmod>2026-08-14T13:35:57.276Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-instruments</loc>
+    <lastmod>2026-08-14T13:35:56.733Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-internal-transfers</loc>
+    <lastmod>2026-08-14T13:35:57.217Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-klines</loc>
+    <lastmod>2026-08-14T13:35:56.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-limit-tiers</loc>
+    <lastmod>2026-08-14T13:35:56.878Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-mark-price-history</loc>
+    <lastmod>2026-08-14T13:35:56.781Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-notifications</loc>
+    <lastmod>2026-08-14T13:35:57.337Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-open-orders</loc>
+    <lastmod>2026-08-14T13:35:57.075Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-orders</loc>
+    <lastmod>2026-08-14T13:35:57.063Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-pnl</loc>
+    <lastmod>2026-08-14T13:35:57.135Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-portfolio</loc>
+    <lastmod>2026-08-14T13:35:57.099Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-public-portfolio</loc>
+    <lastmod>2026-08-14T13:35:56.841Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-recent-trades</loc>
+    <lastmod>2026-08-14T13:35:56.829Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-server-time</loc>
+    <lastmod>2026-08-14T13:35:56.697Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-statistics</loc>
+    <lastmod>2026-08-14T13:35:56.757Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-tickers</loc>
+    <lastmod>2026-08-14T13:35:56.744Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/get-withdrawals</loc>
+    <lastmod>2026-08-14T13:35:57.229Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/internal-transfer</loc>
+    <lastmod>2026-08-14T13:35:57.193Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/maker/cancel-a-quote</loc>
+    <lastmod>2026-06-11T16:11:43.877Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/maker/confirm-or-decline-last-look</loc>
+    <lastmod>2026-06-11T16:11:43.891Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/maker/submit-a-quote</loc>
+    <lastmod>2026-06-11T16:11:43.864Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/mark-notifications-read</loc>
+    <lastmod>2026-08-14T13:35:57.348Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-fee-rate</loc>
+    <lastmod>2026-06-15T19:34:08.944Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-fee-rate-by-path-parameter</loc>
+    <lastmod>2026-06-15T19:34:08.958Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-last-trade-price</loc>
+    <lastmod>2026-06-15T19:34:08.899Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-last-trade-prices-query-parameters</loc>
+    <lastmod>2026-06-15T19:34:08.908Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-last-trade-prices-request-body</loc>
+    <lastmod>2026-06-15T19:34:08.917Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-market-price</loc>
+    <lastmod>2026-06-15T19:34:08.809Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-market-prices-query-parameters</loc>
+    <lastmod>2026-06-15T19:34:08.818Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-market-prices-request-body</loc>
+    <lastmod>2026-06-15T19:34:08.826Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-midpoint-prices-query-parameters</loc>
+    <lastmod>2026-06-15T19:34:08.846Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-midpoint-prices-request-body</loc>
+    <lastmod>2026-06-15T19:34:08.860Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-order-book</loc>
+    <lastmod>2026-06-15T19:34:08.791Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-order-books-request-body</loc>
+    <lastmod>2026-06-15T19:34:08.800Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-spread</loc>
+    <lastmod>2026-06-15T19:34:08.879Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-spreads</loc>
+    <lastmod>2026-06-15T19:34:08.888Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-tick-size</loc>
+    <lastmod>2026-06-15T19:34:08.967Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/market-data/get-tick-size-by-path-parameter</loc>
+    <lastmod>2026-06-15T19:34:08.976Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-batch-prices-history</loc>
+    <lastmod>2026-06-15T19:34:08.935Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-clob-market-info</loc>
+    <lastmod>2026-06-15T19:34:08.986Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-market-by-id</loc>
+    <lastmod>2026-08-14T13:35:55.834Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-market-by-slug</loc>
+    <lastmod>2026-08-14T13:35:55.845Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-market-by-token</loc>
+    <lastmod>2026-06-15T19:34:08.756Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-market-tags-by-id</loc>
+    <lastmod>2026-08-14T13:35:55.855Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-prices-history</loc>
+    <lastmod>2026-06-15T19:34:08.926Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-sampling-markets</loc>
+    <lastmod>2026-08-14T13:35:55.912Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-sampling-simplified-markets</loc>
+    <lastmod>2026-08-14T13:35:55.921Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/get-simplified-markets</loc>
+    <lastmod>2026-08-14T13:35:55.901Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/list-markets</loc>
+    <lastmod>2026-08-14T13:35:55.823Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/markets/list-markets-keyset-pagination</loc>
+    <lastmod>2026-05-15T11:17:13.718Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/misc/download-an-accounting-snapshot-zip-of-csvs</loc>
+    <lastmod>2026-08-14T13:35:56.275Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/misc/get-live-volume-for-an-event</loc>
+    <lastmod>2026-08-14T13:35:55.891Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/misc/get-open-interest</loc>
+    <lastmod>2026-08-14T13:35:55.881Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/misc/get-total-markets-a-user-has-traded</loc>
+    <lastmod>2026-08-14T13:35:56.255Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/perps/geographic-restrictions</loc>
+    <lastmod>2026-07-23T13:48:34.209Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/perps/overview</loc>
+    <lastmod>2026-07-23T13:48:34.209Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/perps/rate-limits</loc>
+    <lastmod>2026-07-23T13:48:34.207Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/predictions/overview</loc>
+    <lastmod>2026-07-23T13:48:34.207Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/profiles/get-public-profile-by-wallet-address</loc>
+    <lastmod>2026-08-14T13:35:56.195Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rate-limits</loc>
+    <lastmod>2026-07-24T19:07:23.927Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rebates/get-current-rebated-fees-for-a-maker</loc>
+    <lastmod>2026-06-15T19:34:09.211Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/relayer-api-keys/get-all-relayer-api-keys</loc>
+    <lastmod>2026-05-12T23:12:31.658Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/relayer/check-if-a-wallet-is-deployed</loc>
+    <lastmod>2026-05-12T23:12:31.651Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/relayer/get-a-transaction-by-id</loc>
+    <lastmod>2026-05-12T23:12:31.614Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/relayer/get-current-nonce-for-a-user</loc>
+    <lastmod>2026-05-12T23:12:31.629Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/relayer/get-recent-transactions-for-a-user</loc>
+    <lastmod>2026-05-12T23:12:31.620Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/relayer/get-relayer-address-and-nonce</loc>
+    <lastmod>2026-05-12T23:12:31.636Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/relayer/submit-a-transaction</loc>
+    <lastmod>2026-05-12T23:12:31.605Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rewards/get-current-active-rewards-configurations</loc>
+    <lastmod>2026-06-15T19:34:09.223Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rewards/get-earnings-for-user-by-date</loc>
+    <lastmod>2026-06-15T19:34:09.251Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rewards/get-multiple-markets-with-rewards</loc>
+    <lastmod>2026-06-15T19:34:09.242Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rewards/get-raw-rewards-for-a-specific-market</loc>
+    <lastmod>2026-06-15T19:34:09.233Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rewards/get-reward-percentages-for-user</loc>
+    <lastmod>2026-06-15T19:34:09.270Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rewards/get-total-earnings-for-user-by-date</loc>
+    <lastmod>2026-06-15T19:34:09.260Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/rewards/get-user-earnings-and-markets-configuration</loc>
+    <lastmod>2026-06-15T19:34:09.285Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/search/search-markets-events-and-profiles</loc>
+    <lastmod>2026-08-14T13:35:56.317Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/series/get-series-by-id</loc>
+    <lastmod>2026-08-14T13:35:56.409Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/series/list-series</loc>
+    <lastmod>2026-08-14T13:35:56.399Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/set-auto-cancel</loc>
+    <lastmod>2026-08-14T13:35:56.952Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/sports/get-sports-metadata-information</loc>
+    <lastmod>2026-08-14T13:35:56.450Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/sports/get-valid-sports-market-types</loc>
+    <lastmod>2026-08-14T13:35:56.461Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/sports/list-teams</loc>
+    <lastmod>2026-08-14T13:35:56.471Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/tags/get-related-tags-relationships-by-tag-id</loc>
+    <lastmod>2026-08-14T13:35:56.357Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/tags/get-related-tags-relationships-by-tag-slug</loc>
+    <lastmod>2026-08-14T13:35:56.368Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/tags/get-tag-by-id</loc>
+    <lastmod>2026-08-14T13:35:56.337Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/tags/get-tag-by-slug</loc>
+    <lastmod>2026-08-14T13:35:56.347Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/tags/get-tags-related-to-a-tag-id</loc>
+    <lastmod>2026-08-14T13:35:56.378Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/tags/get-tags-related-to-a-tag-slug</loc>
+    <lastmod>2026-08-14T13:35:56.388Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/tags/list-tags</loc>
+    <lastmod>2026-08-14T13:35:56.327Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/test-connection</loc>
+    <lastmod>2026-08-14T13:35:56.686Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/cancel-all-orders</loc>
+    <lastmod>2026-06-15T19:34:09.112Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/cancel-multiple-orders</loc>
+    <lastmod>2026-06-15T19:34:09.102Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/cancel-orders-for-a-market</loc>
+    <lastmod>2026-06-15T19:34:09.121Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/cancel-single-order</loc>
+    <lastmod>2026-06-15T19:34:09.057Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/get-builder-trades</loc>
+    <lastmod>2026-06-15T19:34:09.163Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/get-order-scoring-status</loc>
+    <lastmod>2026-06-15T19:34:09.130Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/get-single-order-by-id</loc>
+    <lastmod>2026-06-15T19:34:09.066Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/get-trades</loc>
+    <lastmod>2026-06-15T19:34:09.153Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/get-user-orders</loc>
+    <lastmod>2026-06-15T19:34:09.086Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/post-a-new-order</loc>
+    <lastmod>2026-06-15T19:34:09.028Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/post-multiple-orders</loc>
+    <lastmod>2026-06-15T19:34:09.077Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trade/send-heartbeat</loc>
+    <lastmod>2026-06-15T19:34:09.141Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/trading-rate-limits</loc>
+    <lastmod>2026-07-24T19:07:23.930Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/update-isolated-margin</loc>
+    <lastmod>2026-08-14T13:35:56.987Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/update-leverage</loc>
+    <lastmod>2026-08-14T13:35:56.963Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/update-leverage-for-multiple-instruments</loc>
+    <lastmod>2026-08-14T13:35:56.975Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/withdraw</loc>
+    <lastmod>2026-08-14T13:35:57.181Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/market</loc>
+    <lastmod>2026-02-19T00:58:29.737Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-auth</loc>
+    <lastmod>2026-07-07T20:25:03.576Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-auto-cancel</loc>
+    <lastmod>2026-07-07T20:25:03.577Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-balances</loc>
+    <lastmod>2026-07-07T20:25:03.602Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-bbo</loc>
+    <lastmod>2026-07-07T20:25:03.606Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-book</loc>
+    <lastmod>2026-07-07T20:25:03.601Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-cancel-all</loc>
+    <lastmod>2026-07-31T17:03:10.469Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-cancel-orders</loc>
+    <lastmod>2026-07-07T20:25:03.603Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-cancel-orders-coid</loc>
+    <lastmod>2026-07-07T20:25:03.608Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-deposits</loc>
+    <lastmod>2026-07-07T20:25:03.602Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-fills</loc>
+    <lastmod>2026-07-07T20:25:03.605Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-funding</loc>
+    <lastmod>2026-07-07T20:25:03.607Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-klines</loc>
+    <lastmod>2026-07-07T20:25:03.599Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-notifications</loc>
+    <lastmod>2026-07-31T17:03:10.470Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-orders</loc>
+    <lastmod>2026-07-07T20:25:03.600Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-ping</loc>
+    <lastmod>2026-07-07T20:25:03.635Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-place-orders</loc>
+    <lastmod>2026-07-07T20:25:03.633Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-portfolio</loc>
+    <lastmod>2026-07-07T20:25:03.630Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-statistics</loc>
+    <lastmod>2026-07-07T20:25:03.630Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-tickers</loc>
+    <lastmod>2026-07-07T20:25:03.634Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-trades</loc>
+    <lastmod>2026-07-07T20:25:03.629Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-update-leverage</loc>
+    <lastmod>2026-07-07T20:25:03.633Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-update-leverages</loc>
+    <lastmod>2026-08-07T15:20:28.073Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-update-margin</loc>
+    <lastmod>2026-08-06T13:51:44.037Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/perps-withdrawals</loc>
+    <lastmod>2026-07-07T20:25:03.631Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/rfq</loc>
+    <lastmod>2026-06-09T19:46:44.458Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/sports</loc>
+    <lastmod>2026-02-19T00:58:29.741Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/api-reference/wss/user</loc>
+    <lastmod>2026-02-19T00:58:29.734Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/changelog/perps</loc>
+    <lastmod>2026-08-13T13:26:46.809Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/changelog/predictions</loc>
+    <lastmod>2026-08-10T16:07:58.677Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/changelog/sdks</loc>
+    <lastmod>2026-08-13T17:05:06.288Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/bridge/get-status-address</loc>
+    <lastmod>2026-08-12T19:48:00.776Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/bridge/get-supported-assets</loc>
+    <lastmod>2026-08-13T16:57:58.220Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/bridge/post-deposit</loc>
+    <lastmod>2026-08-13T16:57:58.219Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/bridge/post-quote</loc>
+    <lastmod>2026-08-13T16:57:58.217Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/bridge/post-withdraw</loc>
+    <lastmod>2026-08-13T16:57:58.225Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/delete-cancel-all</loc>
+    <lastmod>2026-07-23T19:46:25.302Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/delete-cancel-market-orders</loc>
+    <lastmod>2026-07-23T19:46:25.301Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/delete-order</loc>
+    <lastmod>2026-07-23T19:46:25.304Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/delete-orders</loc>
+    <lastmod>2026-07-23T19:46:25.233Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-book</loc>
+    <lastmod>2026-07-23T19:46:25.233Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-builder-trades</loc>
+    <lastmod>2026-07-23T19:46:25.232Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-clob-markets-condition-id</loc>
+    <lastmod>2026-07-23T19:46:25.231Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-data-order-orderid</loc>
+    <lastmod>2026-07-23T19:46:25.230Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-data-orders</loc>
+    <lastmod>2026-07-23T19:46:25.230Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-data-trades</loc>
+    <lastmod>2026-07-23T19:46:25.229Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-fee-rate</loc>
+    <lastmod>2026-07-23T19:46:25.239Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-fee-rate-token-id</loc>
+    <lastmod>2026-07-23T19:46:25.240Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-last-trade-price</loc>
+    <lastmod>2026-07-23T19:46:25.239Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-last-trades-prices</loc>
+    <lastmod>2026-07-23T19:46:25.227Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-markets-by-token-token-id</loc>
+    <lastmod>2026-07-23T19:46:25.214Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-midpoint</loc>
+    <lastmod>2026-07-23T19:46:25.213Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-midpoints</loc>
+    <lastmod>2026-07-23T19:46:25.212Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-order-scoring</loc>
+    <lastmod>2026-07-23T19:46:25.211Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-price</loc>
+    <lastmod>2026-07-23T19:46:25.228Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-prices</loc>
+    <lastmod>2026-07-23T19:46:25.209Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-prices-history</loc>
+    <lastmod>2026-07-23T19:46:25.228Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rebates-current</loc>
+    <lastmod>2026-07-23T19:46:25.208Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rewards-markets-condition-id</loc>
+    <lastmod>2026-07-23T19:46:25.207Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rewards-markets-current</loc>
+    <lastmod>2026-07-23T19:46:25.206Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rewards-markets-multi</loc>
+    <lastmod>2026-07-23T19:46:25.275Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rewards-user</loc>
+    <lastmod>2026-07-23T19:46:25.215Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rewards-user-markets</loc>
+    <lastmod>2026-07-23T19:46:25.282Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rewards-user-percentages</loc>
+    <lastmod>2026-07-23T19:46:25.218Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-rewards-user-total</loc>
+    <lastmod>2026-07-23T19:46:25.221Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-sampling-markets</loc>
+    <lastmod>2026-08-13T16:57:58.222Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-sampling-simplified-markets</loc>
+    <lastmod>2026-08-13T16:57:58.223Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-simplified-markets</loc>
+    <lastmod>2026-08-13T16:57:58.218Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-spread</loc>
+    <lastmod>2026-07-23T19:46:25.225Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-tick-size</loc>
+    <lastmod>2026-07-23T19:46:25.223Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-tick-size-token-id</loc>
+    <lastmod>2026-07-23T19:46:25.224Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/get-time</loc>
+    <lastmod>2026-07-23T19:46:25.204Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-batch-prices-history</loc>
+    <lastmod>2026-07-23T19:46:25.199Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-books</loc>
+    <lastmod>2026-07-23T19:46:25.201Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-heartbeats</loc>
+    <lastmod>2026-07-23T19:46:25.203Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-last-trades-prices</loc>
+    <lastmod>2026-07-23T19:46:25.198Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-midpoints</loc>
+    <lastmod>2026-07-23T19:46:25.202Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-order</loc>
+    <lastmod>2026-07-23T19:46:25.217Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-orders</loc>
+    <lastmod>2026-07-23T19:46:25.220Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-prices</loc>
+    <lastmod>2026-07-23T19:46:25.222Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/clob/post-spreads</loc>
+    <lastmod>2026-07-23T19:46:25.215Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/combos-rfq/get-v1-rfq-combo-markets</loc>
+    <lastmod>2026-07-23T19:46:25.223Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/combos-rfq/post-v1-maker-confirmations</loc>
+    <lastmod>2026-07-23T19:46:25.226Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/combos-rfq/post-v1-maker-quotes</loc>
+    <lastmod>2026-07-23T19:46:25.225Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/combos-rfq/post-v1-maker-quotes-cancel</loc>
+    <lastmod>2026-07-23T19:46:25.220Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-activity</loc>
+    <lastmod>2026-08-13T16:57:58.133Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-closed-positions</loc>
+    <lastmod>2026-08-13T16:57:58.121Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-holders</loc>
+    <lastmod>2026-08-13T16:57:58.136Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-live-volume</loc>
+    <lastmod>2026-08-13T16:57:58.123Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-oi</loc>
+    <lastmod>2026-08-13T16:57:58.138Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-positions</loc>
+    <lastmod>2026-08-13T16:57:58.129Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-traded</loc>
+    <lastmod>2026-08-13T16:57:58.128Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-trades</loc>
+    <lastmod>2026-08-13T16:57:58.126Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-v1-accounting-snapshot</loc>
+    <lastmod>2026-08-13T16:57:58.129Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-v1-activity-combos</loc>
+    <lastmod>2026-07-23T19:46:24.996Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-v1-builders-leaderboard</loc>
+    <lastmod>2026-08-13T16:57:58.137Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-v1-builders-volume</loc>
+    <lastmod>2026-08-13T16:57:58.124Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-v1-leaderboard</loc>
+    <lastmod>2026-08-13T16:57:58.127Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-v1-market-positions</loc>
+    <lastmod>2026-08-13T16:57:58.125Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-v1-positions-combos</loc>
+    <lastmod>2026-07-23T19:46:24.993Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/data/get-value</loc>
+    <lastmod>2026-08-13T16:57:58.083Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-comments</loc>
+    <lastmod>2026-08-13T16:57:58.135Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-comments-id</loc>
+    <lastmod>2026-08-13T16:57:58.120Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-comments-user-address-user-address</loc>
+    <lastmod>2026-08-13T16:57:58.139Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-events</loc>
+    <lastmod>2026-08-13T16:57:58.143Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-events-id</loc>
+    <lastmod>2026-08-13T16:57:58.081Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-events-id-tags</loc>
+    <lastmod>2026-08-13T16:57:58.139Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-events-keyset</loc>
+    <lastmod>2026-07-23T19:46:24.987Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-events-slug-slug</loc>
+    <lastmod>2026-08-13T16:57:58.136Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-markets</loc>
+    <lastmod>2026-08-13T16:57:58.079Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-markets-id</loc>
+    <lastmod>2026-08-13T16:57:58.132Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-markets-id-tags</loc>
+    <lastmod>2026-08-13T16:57:58.144Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-markets-keyset</loc>
+    <lastmod>2026-07-23T19:46:24.984Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-markets-slug-slug</loc>
+    <lastmod>2026-08-13T16:57:58.134Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-public-profile</loc>
+    <lastmod>2026-08-13T16:57:58.079Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-public-search</loc>
+    <lastmod>2026-08-13T16:57:58.080Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-series</loc>
+    <lastmod>2026-08-13T16:57:58.078Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-series-id</loc>
+    <lastmod>2026-08-13T16:57:58.077Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-sports</loc>
+    <lastmod>2026-08-13T16:57:58.081Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-sports-market-types</loc>
+    <lastmod>2026-08-13T16:57:58.082Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-tags</loc>
+    <lastmod>2026-08-13T16:57:58.023Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-tags-id</loc>
+    <lastmod>2026-08-13T16:57:58.130Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-tags-id-related-tags</loc>
+    <lastmod>2026-08-13T16:57:58.132Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-tags-id-related-tags-tags</loc>
+    <lastmod>2026-08-13T16:57:58.123Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-tags-slug-slug</loc>
+    <lastmod>2026-08-13T16:57:58.025Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-tags-slug-slug-related-tags</loc>
+    <lastmod>2026-08-13T16:57:58.024Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-tags-slug-slug-related-tags-tags</loc>
+    <lastmod>2026-08-13T16:57:58.122Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/gamma/get-teams</loc>
+    <lastmod>2026-08-13T16:57:58.021Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/perps/patch-trade-leverage-batch</loc>
+    <lastmod>2026-08-07T15:20:27.921Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/relayer/get-deployed</loc>
+    <lastmod>2026-07-23T19:46:24.970Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/relayer/get-nonce</loc>
+    <lastmod>2026-07-23T19:46:24.972Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/relayer/get-relay-payload</loc>
+    <lastmod>2026-07-23T19:46:24.983Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/relayer/get-relayer-api-keys</loc>
+    <lastmod>2026-07-23T19:46:24.974Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/relayer/get-transaction</loc>
+    <lastmod>2026-07-23T19:46:24.962Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/relayer/get-transactions</loc>
+    <lastmod>2026-07-23T19:46:24.973Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/endpoints/relayer/post-submit</loc>
+    <lastmod>2026-07-23T19:46:24.969Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/geoblock</loc>
+    <lastmod>2026-08-14T13:36:01.076Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/predictions/overview</loc>
+    <lastmod>2026-07-23T13:48:33.783Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/rate-limits</loc>
+    <lastmod>2026-07-24T19:07:23.610Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/trading-rate-limits</loc>
+    <lastmod>2026-07-24T19:07:23.610Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/wss/market</loc>
+    <lastmod>2026-07-23T19:46:24.965Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/wss/perps-update-leverages</loc>
+    <lastmod>2026-08-07T15:20:27.922Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/wss/rfq</loc>
+    <lastmod>2026-07-23T19:46:24.981Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/wss/sports</loc>
+    <lastmod>2026-07-23T19:46:24.960Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/api-reference/wss/user</loc>
+    <lastmod>2026-07-23T19:46:24.966Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/concepts/markets-events</loc>
+    <lastmod>2026-07-23T13:48:33.790Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/concepts/negative-risk</loc>
+    <lastmod>2026-07-23T13:48:33.785Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/concepts/order-lifecycle</loc>
+    <lastmod>2026-07-23T13:48:33.789Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/concepts/positions-tokens</loc>
+    <lastmod>2026-07-23T13:48:33.787Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/concepts/prices-orderbook</loc>
+    <lastmod>2026-07-23T13:48:33.788Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/concepts/pusd</loc>
+    <lastmod>2026-07-23T13:48:33.782Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/concepts/resolution</loc>
+    <lastmod>2026-07-23T13:48:33.790Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/getting-started/api</loc>
+    <lastmod>2026-07-23T13:48:33.791Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/getting-started/migrate-from-previous-sdks</loc>
+    <lastmod>2026-07-23T13:48:33.787Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/getting-started/python</loc>
+    <lastmod>2026-07-23T13:48:33.787Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/getting-started/sdks-apis</loc>
+    <lastmod>2026-07-23T13:48:33.784Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/getting-started/typescript</loc>
+    <lastmod>2026-07-23T13:48:33.795Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn</loc>
+    <lastmod>2026-07-23T13:48:33.783Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/market-data/chainlink-twap</loc>
+    <lastmod>2026-08-04T15:39:33.316Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/market-data/discover-markets</loc>
+    <lastmod>2026-08-05T13:11:41.963Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/market-data/market-details</loc>
+    <lastmod>2026-07-24T11:02:15.207Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/market-data/overview</loc>
+    <lastmod>2026-07-30T12:59:25.054Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/market-data/prices-order-books</loc>
+    <lastmod>2026-07-24T11:02:15.211Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/market-data/public-analytics</loc>
+    <lastmod>2026-07-24T11:02:15.206Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/market-data/realtime-data</loc>
+    <lastmod>2026-07-30T12:59:25.060Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/polymarket-101</loc>
+    <lastmod>2026-07-23T13:48:33.791Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/programs/builders/fees</loc>
+    <lastmod>2026-07-23T13:48:33.783Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/programs/builders/overview</loc>
+    <lastmod>2026-07-23T13:48:33.792Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/programs/builders/tiers</loc>
+    <lastmod>2026-07-23T13:48:33.781Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/programs/liquidity-rewards</loc>
+    <lastmod>2026-08-06T22:24:22.749Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/programs/maker-rebates</loc>
+    <lastmod>2026-07-23T13:48:30.474Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/programs/referral-program</loc>
+    <lastmod>2026-07-23T13:48:30.476Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/programs/taker-rebates</loc>
+    <lastmod>2026-07-23T13:48:30.475Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/resources/blockchain-data</loc>
+    <lastmod>2026-07-23T13:48:30.474Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/resources/contracts</loc>
+    <lastmod>2026-07-23T13:48:30.467Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/resources/error-codes</loc>
+    <lastmod>2026-07-23T13:48:30.470Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/bridge/deposit</loc>
+    <lastmod>2026-08-12T19:48:00.409Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/bridge/quote</loc>
+    <lastmod>2026-07-23T13:48:30.471Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/bridge/status</loc>
+    <lastmod>2026-08-12T19:48:00.408Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/bridge/supported-assets</loc>
+    <lastmod>2026-08-12T19:48:00.408Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/bridge/withdraw</loc>
+    <lastmod>2026-08-12T19:48:00.406Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/combos/market-makers</loc>
+    <lastmod>2026-08-06T16:52:30.718Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/combos/overview</loc>
+    <lastmod>2026-07-23T13:48:30.468Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/fees</loc>
+    <lastmod>2026-07-23T13:48:30.470Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/manage-orders</loc>
+    <lastmod>2026-07-24T11:02:11.039Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/market-making</loc>
+    <lastmod>2026-07-23T13:48:30.474Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/matching-engine</loc>
+    <lastmod>2026-07-23T13:48:30.470Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/overview</loc>
+    <lastmod>2026-07-23T13:48:30.475Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/place-orders</loc>
+    <lastmod>2026-07-24T11:02:11.026Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/positions/combinatorial</loc>
+    <lastmod>2026-07-23T13:48:30.464Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/positions/how-positions-work</loc>
+    <lastmod>2026-07-23T13:48:30.465Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/positions/manage</loc>
+    <lastmod>2026-07-23T13:48:30.478Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/quickstart</loc>
+    <lastmod>2026-07-23T13:48:30.465Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/realtime-order-updates</loc>
+    <lastmod>2026-07-24T11:02:11.002Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/wallet-activity</loc>
+    <lastmod>2026-07-24T11:02:11.018Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/cn/trading/wallets-auth</loc>
+    <lastmod>2026-07-24T11:02:11.041Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/concepts/markets-events</loc>
+    <lastmod>2026-07-23T13:48:30.467Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/concepts/negative-risk</loc>
+    <lastmod>2026-07-23T13:48:30.469Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/concepts/order-lifecycle</loc>
+    <lastmod>2026-07-23T13:48:30.469Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/concepts/positions-tokens</loc>
+    <lastmod>2026-04-17T16:05:34.291Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/concepts/prices-orderbook</loc>
+    <lastmod>2026-02-19T18:50:55.412Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/concepts/pusd</loc>
+    <lastmod>2026-04-17T16:05:36.298Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/concepts/resolution</loc>
+    <lastmod>2026-04-30T19:37:42.030Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/getting-started/api</loc>
+    <lastmod>2026-07-23T13:48:30.466Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/getting-started/migrate-from-previous-sdks</loc>
+    <lastmod>2026-07-23T13:48:30.468Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/getting-started/python</loc>
+    <lastmod>2026-07-23T13:48:30.471Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/getting-started/sdks-apis</loc>
+    <lastmod>2026-07-23T13:48:30.461Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/getting-started/typescript</loc>
+    <lastmod>2026-07-23T13:48:30.463Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com</loc>
+    <lastmod>2026-07-23T13:48:30.462Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/market-data/chainlink-twap</loc>
+    <lastmod>2026-08-10T13:48:19.816Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/market-data/discover-markets</loc>
+    <lastmod>2026-08-05T13:11:41.965Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/market-data/market-details</loc>
+    <lastmod>2026-08-04T13:49:34.334Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/market-data/overview</loc>
+    <lastmod>2026-07-30T12:59:24.773Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/market-data/prices-order-books</loc>
+    <lastmod>2026-08-13T17:00:41.393Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/market-data/public-analytics</loc>
+    <lastmod>2026-07-24T11:02:11.003Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/market-data/realtime-data</loc>
+    <lastmod>2026-07-30T12:59:24.809Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/account-management</loc>
+    <lastmod>2026-08-13T13:09:29.732Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/authenticated-sessions</loc>
+    <lastmod>2026-08-10T14:14:23.395Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/concepts</loc>
+    <lastmod>2026-07-07T20:25:03.873Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/errors</loc>
+    <lastmod>2026-08-07T16:24:19.408Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/faq</loc>
+    <lastmod>2026-07-24T09:55:32.636Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/fund-your-account</loc>
+    <lastmod>2026-07-31T16:44:52.805Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/architecture</loc>
+    <lastmod>2026-07-07T20:25:03.909Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/fees</loc>
+    <lastmod>2026-07-17T17:27:36.995Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/funding</loc>
+    <lastmod>2026-07-07T20:25:03.912Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/index-price</loc>
+    <lastmod>2026-07-07T20:25:03.913Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/liquidation-mechanics</loc>
+    <lastmod>2026-08-13T13:26:46.286Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/margin</loc>
+    <lastmod>2026-08-06T13:51:43.807Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/mark-price</loc>
+    <lastmod>2026-07-07T20:25:03.909Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/market-sessions</loc>
+    <lastmod>2026-07-07T20:25:03.944Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/markets</loc>
+    <lastmod>2026-08-03T16:45:57.695Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/learn-about-trading/overview</loc>
+    <lastmod>2026-07-23T13:48:27.242Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/market-data</loc>
+    <lastmod>2026-08-13T13:12:57.894Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/notifications</loc>
+    <lastmod>2026-08-10T09:42:24.527Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/overview</loc>
+    <lastmod>2026-07-07T20:25:03.942Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/place-your-first-trade</loc>
+    <lastmod>2026-07-23T13:48:27.243Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/realtime-updates</loc>
+    <lastmod>2026-07-24T11:02:08.070Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/referral-program</loc>
+    <lastmod>2026-08-10T14:12:03.580Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/perps/trading</loc>
+    <lastmod>2026-08-10T14:14:23.270Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/polymarket-101</loc>
+    <lastmod>2026-07-23T13:48:27.239Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/programs/builders/fees</loc>
+    <lastmod>2026-07-23T13:48:27.238Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/programs/builders/overview</loc>
+    <lastmod>2026-07-23T13:48:27.237Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/programs/builders/tiers</loc>
+    <lastmod>2026-07-23T13:48:27.234Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/programs/liquidity-rewards</loc>
+    <lastmod>2026-08-06T22:24:22.750Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/programs/maker-rebates</loc>
+    <lastmod>2026-07-23T13:48:27.237Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/programs/referral-program</loc>
+    <lastmod>2026-07-31T17:23:21.746Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/programs/taker-rebates</loc>
+    <lastmod>2026-07-23T13:48:27.238Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/resources/blockchain-data</loc>
+    <lastmod>2026-07-23T13:48:27.235Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/resources/contracts</loc>
+    <lastmod>2026-07-23T13:48:27.236Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/resources/error-codes</loc>
+    <lastmod>2026-07-23T13:48:27.238Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/bridge/deposit</loc>
+    <lastmod>2026-08-12T19:48:00.234Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/bridge/quote</loc>
+    <lastmod>2026-07-23T13:48:27.233Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/bridge/status</loc>
+    <lastmod>2026-08-12T19:48:00.227Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/bridge/supported-assets</loc>
+    <lastmod>2026-08-12T19:48:00.222Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/bridge/withdraw</loc>
+    <lastmod>2026-08-12T19:48:00.217Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/combos/builders</loc>
+    <lastmod>2026-08-13T16:57:57.822Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/combos/collateral-return</loc>
+    <lastmod>2026-07-27T15:30:01.079Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/combos/market-makers</loc>
+    <lastmod>2026-08-06T16:52:30.641Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/combos/overview</loc>
+    <lastmod>2026-08-13T16:57:57.821Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/fees</loc>
+    <lastmod>2026-07-23T13:48:27.234Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/manage-orders</loc>
+    <lastmod>2026-07-24T11:02:08.059Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/market-making</loc>
+    <lastmod>2026-07-23T13:48:27.239Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/matching-engine</loc>
+    <lastmod>2026-07-23T13:48:27.232Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/overview</loc>
+    <lastmod>2026-07-23T13:48:27.230Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/place-orders</loc>
+    <lastmod>2026-08-04T13:49:34.338Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/positions/combinatorial</loc>
+    <lastmod>2026-07-23T13:48:27.235Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/positions/how-positions-work</loc>
+    <lastmod>2026-07-23T13:48:27.229Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/positions/manage</loc>
+    <lastmod>2026-07-23T13:48:27.231Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/quickstart</loc>
+    <lastmod>2026-07-24T21:51:47.026Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/realtime-order-updates</loc>
+    <lastmod>2026-07-24T11:02:08.057Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/wallet-activity</loc>
+    <lastmod>2026-08-04T15:19:33.945Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://docs.polymarket.com/trading/wallets-auth</loc>
+    <lastmod>2026-07-24T11:02:08.056Z</lastmod>
+  </url>
+</urlset>
